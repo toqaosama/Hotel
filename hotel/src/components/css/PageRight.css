@@ -1,0 +1,80 @@
+/* Section */
+.expR-section {
+  position: relative;
+  overflow: hidden;
+  padding: 120px;
+  font-family: "Effra Light", "Effra Regular", Arial, sans-serif;
+}
+
+/* Background animation */
+.expR-bg-anim {
+  position: absolute;
+  inset: 0;
+  width: 0%;
+  height: 100%;
+  background: linear-gradient(to right, #f5f3ee, #e9e5d6);
+  z-index: 0;
+  animation: expR-bgLoad 1s ease-out forwards;
+}
+
+@keyframes expR-bgLoad {
+  0% { width:0%; opacity:0; }
+  40% { opacity:0.6; }
+  100% { width:100%; opacity:1; }
+}
+
+/* Grid layout */
+.expR-inner {
+  position: relative;
+  z-index: 2;
+  max-width: 1440px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 60px;
+  align-items: center;
+}
+
+/* Image */
+.expR-right img.expR-image {
+  width: 100%;
+  height: 450px;
+  object-fit: cover;
+  border-radius: 2px;
+}
+
+/* Text */
+.expR-left .expR-sub {
+  text-transform: uppercase;
+  color: #777;
+  font-size: 18px;
+  margin-bottom: 10px;
+}
+
+.expR-left .expR-head-wrapper {
+  overflow: hidden;
+  margin: 20px 0;
+}
+
+.expR-left .expR-head {
+  font-family: "Chronicle Display";
+  font-size: 40px;
+  line-height: 1.05;
+  text-transform: uppercase;
+  opacity: 0;
+  transform: translateY(35px);
+}
+
+.expR-left .expR-head:nth-child(1) { animation: expR-fadeLine 0.8s ease-out 0.2s forwards; }
+.expR-left .expR-head:nth-child(2) { animation: expR-fadeLine 0.8s ease-out 0.4s forwards; }
+
+@keyframes expR-fadeLine {
+  0% { opacity:0; transform: translateY(35px); }
+  100% { opacity:1; transform: translateY(0); }
+}
+
+.expR-left .expR-paragraphs p {
+  font-size: 16px;
+  line-height: 24px;
+  color: #1c1c1c;
+}

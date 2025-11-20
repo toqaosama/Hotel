@@ -1,0 +1,149 @@
+.carousel-section {
+  width: 100%;
+  max-width: 1440px;
+  margin: 0 auto;
+  padding: 60px 50px;
+  box-sizing: border-box;
+  position: relative;
+}
+
+.carousel-header h2 {
+  font-size: 45px;
+  text-transform: uppercase;
+  margin-bottom: 20px;
+  font-family: "Effra Light";
+}
+
+.carousel-header p {
+  font-size: 16px;
+  margin-bottom: 10px;
+}
+
+.all-news {
+font-family: "Effra Light";
+  text-decoration: none;
+  position: relative;
+  color: #010400;
+}
+
+.all-news span {
+  position: absolute;
+  height: 1px;
+  width: 100%;
+  bottom: -2px;
+  left: 0;
+  background-color: #010400;
+  transition: 1s;
+}
+
+.carousel-wrapper {
+  position: relative;
+  overflow: hidden;
+}
+
+.carousel {
+  display: flex;
+  gap: 40px;
+  overflow-x: auto;
+  scroll-behavior: smooth;
+  padding-bottom: 20px;
+}
+
+.carousel::-webkit-scrollbar {
+  display: none;
+}
+
+.card {
+  flex: 0 0 320px;
+  background-color: #fff;
+  border: 1px solid #e6e6e6;
+  transition: transform 0.3s;
+  cursor: pointer;
+}
+
+.card:hover {
+  transform: translateY(-10px);
+}
+
+.card-img img {
+  width: 100%;
+  height: 427px;
+  object-fit: cover;
+}
+
+.card-content {
+  padding: 20px;
+}
+
+.category {
+  font-size: 14px;
+  text-transform: uppercase;
+  color: #979797;
+  margin-bottom: 10px;
+}
+
+.card-content h3 {
+  font-size: 35px;
+  line-height: 35px;
+  margin: 10px 0;
+  font-family: "Effra Light";
+  color: #010400;
+}
+
+.card-content p.description {
+  font-size: 16px;
+  line-height: 24px;
+  color: #010400;
+}
+
+.discover {
+  display: inline-block;
+  position: relative;
+  text-decoration: none;
+  color: #010400;
+  margin-top: 10px;
+}
+
+.discover::after {
+  content: "";
+  position: absolute;
+  height: 1px;
+  width: 100%;
+  left: 0;
+  bottom: -2px;
+  background-color: #010400;
+  transition: 0.3s;
+}
+
+.discover:hover::after {
+  width: 0;
+}
+
+.scroll-btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 40px;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  z-index: 10;
+  padding: 0 10px;
+}
+
+.scroll-btn.left {
+  left: 0;
+}
+
+.scroll-btn.right {
+  right: 0;
+}
+
+@media (max-width: 768px) {
+  .card {
+    flex: 0 0 250px;
+  }
+  .card-img img {
+    height: 330px;
+  }
+}

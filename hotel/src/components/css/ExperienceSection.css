@@ -1,69 +1,61 @@
-/* MAIN SECTION — same padding as Sani Resort */
-.exp-section {
+.exp2-section {
   position: relative;
   overflow: hidden;
-  padding: 180px 120px; /* MORE padding — matches screenshot */
+  padding: 180px 120px;
   background: transparent;
   font-family: "Effra Light", "Effra Regular", Arial, sans-serif;
 }
 
-/* LEFT → RIGHT beige background reveal */
-.exp-bg-anim {
+.exp2-bg-anim {
   position: absolute;
   inset: 0;
   height: 100%;
   width: 0%;
   background: linear-gradient(to right, #e9e5d6, #f5f3ee);
   z-index: 0;
-  animation: bgLoad 1s ease-out forwards;
+  animation: exp2-bgLoad 1s ease-out forwards;
 }
 
-/* background expands like progress bar */
-@keyframes bgLoad {
+@keyframes exp2-bgLoad {
   0%   { width: 0%; opacity: 0; }
   40%  { opacity: 0.6; }
   100% { width: 100%; opacity: 1; }
 }
 
-/* GRID */
-.exp-inner {
+.exp2-inner {
   position: relative;
   z-index: 2;
   max-width: 1440px;
   margin: 0 auto;
   display: grid;
-  grid-template-columns: 1.2fr 1fr; /* more like screenshot */
+  grid-template-columns: 1.2fr 1fr;
   gap: 70px;
   align-items: center;
 }
 
-/***********************************
- LEFT IMAGE AREA
-************************************/
-.exp-left-media {
+/* LEFT IMAGE AREA */
+.exp2-left-media {
   position: relative;
   min-height: 450px;
 }
 
-/* main image */
-.exp-main-picture img.exp-main-image {
+.exp2-main-picture img.exp2-main-image {
   width: 100%;
   height: 450px;
   object-fit: cover;
   border-radius: 2px;
 }
 
-/* floating image left */
-.exp-overlay-small {
+.exp2-overlay-small {
   position: absolute;
   top: 270px;
-  left: -60px; /* more pop-out like screenshot */
+  left: -60px;
   width: 48%;
   max-width: 420px;
   z-index: 3;
 }
 
-.exp-overlay-small img {
+.exp2-overlay-small img {
   width: 100%;
   height: 250px;
   object-fit: cover;
@@ -71,22 +63,20 @@
   box-shadow: 0 10px 28px rgba(0,0,0,0.2);
 }
 
-/***********************************
- TEXT AREA
-************************************/
-.exp-sub {
+/* TEXT AREA */
+.exp2-sub {
   text-transform: uppercase;
   color: #777;
   font-size: 18px;
   margin-bottom: 10px;
 }
 
-.exp-head-wrapper {
+.exp2-head-wrapper {
   margin: 30px 0;
   overflow: hidden;
 }
 
-.exp-head {
+.exp2-head {
   font-family: "Chronicle Display";
   font-size: 48px;
   line-height: 1.05;
@@ -96,23 +86,22 @@
   transform: translateY(35px);
 }
 
-.exp-head:nth-child(1) { animation: fadeLine 0.8s ease-out 0.2s forwards; }
-.exp-head:nth-child(2) { animation: fadeLine 0.8s ease-out 0.4s forwards; }
-.exp-head:nth-child(3) { animation: fadeLine 0.8s ease-out 0.6s forwards; }
+.exp2-head:nth-child(1) { animation: exp2-fadeLine 0.8s ease-out 0.2s forwards; }
+.exp2-head:nth-child(2) { animation: exp2-fadeLine 0.8s ease-out 0.4s forwards; }
 
-@keyframes fadeLine {
+@keyframes exp2-fadeLine {
   0% { opacity: 0; transform: translateY(35px); }
   100% { opacity: 1; transform: translateY(0); }
 }
 
-.exp-paragraphs p {
+.exp2-paragraphs p {
   font-size: 17px;
   line-height: 26px;
   margin-bottom: 18px;
   color: #1c1c1c;
 }
 
-.exp-link {
+.exp2-link {
   position: relative;
   font-size: 16px;
   font-weight: 500;
@@ -120,7 +109,7 @@
   text-decoration: none;
 }
 
-.exp-link-underline {
+.exp2-link-underline {
   position: absolute;
   left: 0;
   bottom: -5px;
@@ -130,20 +119,18 @@
   transition: width 0.6s ease;
 }
 
-.exp-link:hover .exp-link-underline {
+.exp2-link:hover .exp2-link-underline {
   width: 100%;
 }
 
-/***********************************
- RESPONSIVE
-************************************/
+/* RESPONSIVE */
 @media (max-width: 1024px) {
-  .exp-inner {
+  .exp2-inner {
     grid-template-columns: 1fr;
     gap: 30px;
   }
 
-  .exp-overlay-small {
+  .exp2-overlay-small {
     position: relative;
     left: 0;
     top: -10px;
@@ -153,8 +140,8 @@
 }
 
 @media (max-width: 560px) {
-  .exp-main-picture img.exp-main-image { height: 250px; }
-  .exp-overlay-small img { height: 180px; }
-  .exp-head { font-size: 30px; }
-  .exp-section { padding: 70px 30px; }
+  .exp2-main-picture img.exp2-main-image { height: 250px; }
+  .exp2-overlay-small img { height: 180px; }
+  .exp2-head { font-size: 30px; }
+  .exp2-section { padding: 70px 30px; }
 }
