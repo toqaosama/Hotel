@@ -1,0 +1,25 @@
+.text-reveal-container {
+  overflow: hidden;
+  display: inline-block;
+}
+
+.text-reveal {
+  display: inline-block;
+  transform: translateY(100%);
+  animation: textReveal 1.4s ease-out forwards;
+  opacity: 0;
+}
+
+@keyframes textReveal {
+  0% {
+    transform: translateY(100%);
+    opacity: 0;
+  }
+  40% {
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(0%);
+    opacity: 1;
+  }
+}

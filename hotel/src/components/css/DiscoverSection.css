@@ -1,3 +1,7 @@
+/* =============================== */
+/*   CONTAINER + GENERAL STYLES    */
+/* =============================== */
+
 .resort-container {
   display: block;
   box-sizing: border-box;
@@ -6,60 +10,106 @@
   max-width: 100%;
 }
 
-/* Title above heading */
+/* =============================== */
+/*        TOP SMALL TITLE          */
+/* =============================== */
+
 .resort-title {
   margin-top: 18px;
   margin-bottom: 35px;
   font-family: "Effra Regular";
   font-weight: 400;
   font-size: 18px;
-  line-height: 20px;
   text-transform: uppercase;
   color: #979797;
-  letter-spacing: normal;
+  letter-spacing: 1px;
   text-align: center;
+
+  opacity: 0;
+  transform: translateY(20px);
+  animation: fadeUp 0.8s ease-out forwards;
 }
 
-/* Main heading */
-.resort-heading {
-  font-family: "Chronicle Display";
-  font-weight: 400;
-  text-transform: uppercase;
-  font-size: 54px;
-  line-height: 45.9px;
-  letter-spacing: 3px;
-  margin: 0;
-  padding-bottom: 1px;
-  text-align: center;
+/* =============================== */
+/*     MAIN HEADING WRAPPER        */
+/* =============================== */
+
+.resort-heading-wrapper {
   overflow: hidden;
 }
 
-/* Big animated letters */
-.resort-heading span {
-  display: inline-block;
-  font-size: 90px;
-  line-height: 76.5px;
-  letter-spacing: -11px;
-  padding-bottom: 3px;
-  padding-top: 25px;
-  margin: -25px 0 0 0;
+/* =============================== */
+/*       LINE-BY-LINE ANIMATION    */
+/* =============================== */
+
+.resort-heading {
+  opacity: 0;
+  transform: translateY(30px);
+  animation: revealLine 1s ease-out forwards;
+
+  /* correct final size */
+  font-size: 5rem !important;
+  font-family: "Chronicle Display";
   text-transform: uppercase;
+  margin: 0;
+  text-align: center;
 }
 
-.resort-heading span.highlight {
+/* Stagger timing */
+.resort-heading:nth-child(1) { animation-delay: 0.2s; }
+.resort-heading:nth-child(2) { animation-delay: 0.45s; }
+.resort-heading:nth-child(3) { animation-delay: 0.7s; }
+.resort-heading:nth-child(4) { animation-delay: 0.95s; }
+
+/* Gold color */
+.highlight-gold {
   color: rgb(173, 152, 110);
 }
 
-/* Paragraphs */
+/* =============================== */
+/*         LETTER ANIMATION        */
+/*  (kept and corrected to avoid   */
+/*    conflicting with line anim)  */
+/* =============================== */
+
+.resort-heading span {
+  display: inline-block;
+  font-size: 90px;
+  margin-top: -25px;
+  padding-top: 25px;
+  transform: translateY(100%);
+  animation: letterUp 0.7s ease-out forwards;
+}
+
+/* Delay every letter */
+.resort-heading span:nth-child(1) { animation-delay: 0.2s; }
+.resort-heading span:nth-child(2) { animation-delay: 0.3s; }
+.resort-heading span:nth-child(3) { animation-delay: 0.4s; }
+.resort-heading span:nth-child(4) { animation-delay: 0.5s; }
+.resort-heading span:nth-child(5) { animation-delay: 0.6s; }
+.resort-heading span:nth-child(6) { animation-delay: 0.7s; }
+
+/* =============================== */
+/*        PARAGRAPH SECTION        */
+/* =============================== */
+
 .resort-description {
   margin-top: 20px;
-  display: inline-block;
   max-width: 90%;
   font-size: 16px;
   line-height: 24px;
+  margin-inline: auto;
+
+  opacity: 0;
+  transform: translateY(20px);
+  animation: fadeUp 0.8s ease-out forwards;
+  animation-delay: 1.2s;
 }
 
-/* Button / link */
+/* =============================== */
+/*             LINK BUTTON         */
+/* =============================== */
+
 .resort-link {
   font-family: "Effra Regular";
   font-weight: 400;
@@ -67,77 +117,107 @@
   text-decoration: none;
   position: relative;
   display: inline-block;
-  transition: color 0.3s;
+  margin-top: 20px;
+  transition: 0.3s color ease;
 }
 
+/* underline loading bar */
 .resort-link span {
   position: absolute;
   left: 0;
   bottom: -2px;
+  width: 0%;
+  height: 2px;
+  background-color: rgb(173, 152, 110);
+  transition: width 0.5s ease;
+}
+
+.resort-link:hover {
+  color: rgb(173, 152, 110);
+}
+
+.resort-link:hover span {
   width: 100%;
-  height: 1px;
-  background-color: rgb(1, 4, 0);
-  display: block;
-  transition: 1s;
 }
 
-/* Fade-up animation */
-.fade-up {
-  opacity: 0;
-  transform: translateY(40px);
-  transition: all 0.8s ease-out;
-}
+/* =============================== */
+/*            ANIMATIONS           */
+/* =============================== */
 
-.fade-up.visible {
-  opacity: 1;
-  transform: translateY(0);
-}
-
-/* Responsive: mobile layout with 3 rows */
-@media (max-width: 768px) {
-  .resort-container {
-    min-width: 100%;
+@keyframes revealLine {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
   }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes letterUp {
+  from {
+    transform: translateY(100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0%);
+    opacity: 1;
+  }
+}
+
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(40px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* =============================== */
+/*            MOBILE STYLE         */
+/* =============================== */
+
+@media (max-width: 768px) {
 
   .resort-heading {
-    font-size: 36px;
+    font-size: 2.2rem !important;
   }
 
   .resort-heading span {
     font-size: 60px;
-    line-height: 50px;
   }
 
   .resort-description {
     font-size: 14px;
-    line-height: 20px;
+    line-height: 21px;
   }
 
-  /* Rearrange Bootstrap columns into 3 rows */
-  .row.text-center.text-md-start {
+  /* TEXT → CAROUSELS */
+  .mobile-wrapper {
     display: flex;
     flex-direction: column;
-    align-items: center;
-  }
-
-  .row.text-center.text-md-start > .col-md-4 {
     width: 100%;
-    margin-bottom: 20px;
   }
 
-  /* Carousels side by side on mobile row 2 */
-  .carousel-row {
+  /* carousels side-by-side on mobile */
+  .carousel-pair {
     display: flex;
     flex-direction: row;
-    width: 100%;
-    gap: 16%;
-    padding-inline-start: 5px;
-    
+    gap: 15px;
+    margin: 30px 0;
   }
 
-  .carousel-row .carousel {
+  .carousel-pair .carousel {
     flex: 1;
-    height: 50vh;
-    width: 100%;
+    height: 45vh;
+  }
+
+  .carousel img {
+    height: 45vh !important;
+    object-fit: cover;
   }
 }

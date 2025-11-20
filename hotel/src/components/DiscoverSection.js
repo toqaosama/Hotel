@@ -2,6 +2,7 @@ import React from "react";
 import { Container, Row, Col, Button, Carousel } from "react-bootstrap";
 import { motion } from "framer-motion";
 import "./css/DiscoverSection.css";
+import TextReveal from "../components/animation/TextReveal";
 
 // Dummy images for left and right carousels
 const leftImages = [
@@ -44,33 +45,13 @@ const ResortSection = () => {
           <Col md={4} style={{ backgroundColor: "#fff", padding: "0px 40px", borderRadius: "8px"   }}>
 
       <p className="resort-title">The Resort</p>
-      <h2 className="resort-heading">
-        <span>F</span>
-        <span>I</span>
-        <span>V</span>
-        <span>E</span>
-      </h2>
-          <h2 className="resort-heading">
-        <span>H</span>
-        <span>O</span>
-        <span>T</span>
-        <span>E</span>
-        <span>L</span>
-        <span>S</span>
-      </h2>
-          <h2 className="resort-heading">
-        <span className="highlight">O</span>
-        <span className="highlight">N</span>
-        <span className="highlight">E</span>
-      </h2>
-                <h2 className="resort-heading">
-        <span className="highlight">R</span>
-        <span className="highlight">E</span>
-        <span className="highlight">S</span>
-        <span className="highlight">O</span>
-        <span className="highlight">R</span>
-        <span className="highlight">T</span>
-      </h2>
+      <div className="resort-heading-wrapper">
+  <h2 className="resort-heading">FIVE</h2>
+  <h2 className="resort-heading">HOTELS</h2>
+  <h2 className="resort-heading highlight-gold">ONE</h2>
+  <h2 className="resort-heading highlight-gold">RESORT</h2>
+</div>
+
                   <motion.div
       className="resort-container fade-up"
       initial="hidden"
@@ -91,7 +72,7 @@ const ResortSection = () => {
       </div>
 
       <p>
-        <a href="/our-hotels" className="resort-link">
+        <a href="/our-hotels" className="resort-link button">
           Choose Yours
           <span></span>
         </a>

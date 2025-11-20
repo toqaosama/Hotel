@@ -1,3 +1,8 @@
+*{
+  padding: 0%;
+  margin: 0%;
+  
+}
 .App {
   text-align: center;
   font-family: "Effra Light";
@@ -16,18 +21,19 @@
 }
 
 .App-header {
-  background-color: #282c34;
+  background-color: #ffffff;
   min-height: 100vh;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   font-size: calc(10px + 2vmin);
-  color: white;
+  color: #a27f01;
+  
 }
 
 .App-link {
-  color: #61dafb;
+  color: #a27f01;
 }
 
 @keyframes App-logo-spin {
@@ -37,4 +43,41 @@
   to {
     transform: rotate(360deg);
   }
+}
+
+/* Global button styles: hover color + animated bottom border (loading-bar effect) */
+p, .a {
+  position: relative;
+  display: inline-block;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  color: inherit;
+  padding: 0.5rem 1rem;
+  overflow: hidden;
+}
+
+p::after, .a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  height: 1px;
+  width: 0%;
+  background: #000;
+  transition: width 0.45s ease;
+  transform-origin: left center;
+}
+
+p:hover, .a:hover {
+  color: #a27f01;
+}
+
+p:hover::after, .a:hover::after {
+  width: 100%;
+}
+
+/* Make the animated border visible when buttons receive focus (keyboard accessible) */
+p:focus::after, .a:focus::after {
+  width: 100%;
 }
