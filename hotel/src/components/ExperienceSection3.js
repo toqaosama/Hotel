@@ -17,7 +17,7 @@ export default function ExperienceSection() {
           </div>
           <div className="exp3-paragraphs">
             <p>
-              Discover a resort where possibilities are endless. Whether it’s scuba diving, beekeeping, bird watching, waterskiing – inspiration is found at every turn. Hone your game at world class facilities; including the Rafa Nadal Tennis Center, Bear Grylls Survival Academy, Chelsea Football FC Academy or Sani Treetop Adventure. Or if you want space, explore Sani Resort’s 1,000 acres of unspoilt wilderness by bike.
+              Discover a resort where possibilities are endless. Whether it's scuba diving, beekeeping, bird watching, waterskiing – inspiration is found at every turn. Hone your game at world class facilities; including the Rafa Nadal Tennis Center, Bear Grylls Survival Academy, Chelsea Football FC Academy or Sani Treetop Adventure. Or if you want space, explore Sani Resort's 1,000 acres of unspoilt wilderness by bike.
             </p>
             <p className="exp3-link-row">
               <a className="exp3-link" href="/experiences">

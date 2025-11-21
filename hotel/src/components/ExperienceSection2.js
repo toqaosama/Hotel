@@ -9,7 +9,7 @@ export default function ExperienceSection() {
         <div className="exp3-bg-anim" aria-hidden="true"></div>
 
         <div className="exp3-inner">
-          {/* LEFT COLUMN: big image + video overlay */}
+          {/* Media column - reordered to appear first on mobile */}
           <div className="exp3-media">
             <div className="exp3-media-wrapper">
               <picture className="exp3-main-picture">
@@ -42,7 +42,7 @@ export default function ExperienceSection() {
             </div>
           </div>
 
-          {/* RIGHT COLUMN: text */}
+          {/* Text column */}
           <div className="exp3-text">
             <p className="exp3-sub exp3-animate" style={{ animationDelay: '0.2s' }}>EXPERIENCES</p>
             <div className="exp3-head-wrapper">
@@ -51,7 +51,7 @@ export default function ExperienceSection() {
             </div>
             <div className="exp3-paragraphs exp3-animate" style={{ animationDelay: '0.8s' }}>
               <p>
-                Discover a resort where possibilities are endless. Whether it’s scuba diving, beekeeping, bird watching, waterskiing – inspiration is found at every turn. Hone your game at world class facilities; including the Rafa Nadal Tennis Center, Bear Grylls Survival Academy, Chelsea Football FC Academy or Sani Treetop Adventure. Or if you want space, explore Sani Resort’s 1,000 acres of unspoilt wilderness by bike.
+                Discover a resort where possibilities are endless. Whether it's scuba diving, beekeeping, bird watching, waterskiing – inspiration is found at every turn. Hone your game at world class facilities; including the Rafa Nadal Tennis Center, Bear Grylls Survival Academy, Chelsea Football FC Academy or Sani Treetop Adventure. Or if you want space, explore Sani Resort's 1,000 acres of unspoilt wilderness by bike.
               </p>
               <p className="exp3-link-row">
                 <a className="exp3-link" href="/experiences">
@@ -70,16 +70,16 @@ export default function ExperienceSection() {
           <div className="award-image award-animate" style={{ animationDelay: '0.2s' }}>
             <img
               src="https://sani-prd-cdn.azureedge.net/media/y20b1k41/worlds-leading-family-beach-resort-2024-winner-shield-black-256.png?v=1dbca31e9a75ef0"
-              alt="World’s Leading Family & Beach Resort - WINNER 2024"
+              alt="World's Leading Family & Beach Resort - WINNER 2024"
             />
           </div>
           <div className="award-text">
             <p className="award-subtitle award-animate" style={{ animationDelay: '0.4s' }}>WINNER 2024</p>
             <p className="award-title award-animate" style={{ animationDelay: '0.6s' }}>
-              World’s Leading Family & Beach Resort
+              World's Leading Family & Beach Resort
             </p>
             <p className="award-description award-animate" style={{ animationDelay: '0.8s' }}>
-              Named the World’s Leading Family & Beach Resort for the sixth consecutive year, Sani celebrates success at the prestigious World Travel Awards.
+              Named the World's Leading Family & Beach Resort for the sixth consecutive year, Sani celebrates success at the prestigious World Travel Awards.
             </p>
           </div>
           <div className="award-link award-animate" style={{ animationDelay: '1s' }}>

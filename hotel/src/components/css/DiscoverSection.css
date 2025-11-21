@@ -54,6 +54,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
+  position: relative;
 }
 
 .carousel-img {
@@ -120,7 +121,7 @@
 .heading-line {
   display: flex;
   justify-content: center;
-  flex-wrap: nowrap;
+  flex-wrap: wrap;
   gap: 8px;
   width: 100%;
 }
@@ -129,7 +130,7 @@
   opacity: 0;
   transform: translateY(30px);
   animation: revealLine 1s ease-out forwards;
-  font-size: 2rem !important;
+  font-size: clamp(1.5rem, 4vw, 3.5rem) !important;
   font-family: "Chronicle Display", serif;
   text-transform: uppercase;
   margin: 0;
@@ -158,7 +159,7 @@
 .resort-description {
   margin-top: 20px;
   margin-bottom: 20px;
-  font-size: 14px;
+  font-size: clamp(0.875rem, 1.5vw, 1rem);
   line-height: 1.5;
   opacity: 0;
   transform: translateY(20px);
@@ -191,8 +192,9 @@
   position: relative;
   display: inline-block;
   padding: 8px 0;
-  font-size: 14px;
+  font-size: clamp(0.813rem, 1vw, 0.875rem);
   transition: 0.3s color ease;
+  cursor: pointer;
 }
 
 /* underline loading bar */
@@ -245,12 +247,20 @@
 /* =============================== */
 
 @media (max-width: 1024px) {
-  .resort-heading {
-    font-size: 2.5rem !important;
+  .resort-section-wrapper {
+    padding: 35px 0;
   }
   
   .text-content-column {
     padding: 25px 15px;
+  }
+  
+  .carousel-column {
+    height: 55vh;
+  }
+  
+  .image-wrapper {
+    height: 55vh;
   }
 }
 
@@ -293,13 +303,7 @@
     padding: 0 8px;
   }
 
-  /* Mobile heading sizes - FIXED TEXT BREAKING */
-  .resort-heading {
-    font-size: 1.5rem !important;
-    line-height: 1;
-    white-space: nowrap;
-  }
-
+  /* Mobile heading sizes */
   .resort-heading-wrapper {
     margin-bottom: 20px;
     gap: 6px;
@@ -317,7 +321,7 @@
   }
 
   .resort-description {
-    font-size: 13px;
+    font-size: 14px;
     line-height: 1.4;
     margin: 15px 0;
   }
@@ -330,12 +334,13 @@
   .mobile-carousel {
     order: 1;
     margin-bottom: 0;
-    height: 40vh;
+    height: 45vh;
+    min-height: 280px;
   }
 
   .mobile-image-wrapper {
-    height: 40vh;
-    min-height: 250px;
+    height: 45vh;
+    min-height: 280px;
   }
 
   .button-wrapper {
@@ -343,12 +348,11 @@
   }
 
   .resort-link {
-    font-size: 13px;
     padding: 6px 0;
   }
 }
 
-/* Extra Small Mobile Devices */
+/* Small Mobile Devices */
 @media (max-width: 480px) {
   .resort-section-wrapper {
     padding: 25px 0;
@@ -366,11 +370,6 @@
     padding: 0 5px;
   }
 
-  /* Even smaller text for very small screens */
-  .resort-heading {
-    font-size: 1.3rem !important;
-  }
-
   .heading-line {
     gap: 4px;
   }
@@ -380,28 +379,25 @@
   }
 
   .resort-description {
-    font-size: 12px;
+    font-size: 13px;
     line-height: 1.3;
   }
 
-  .resort-link {
-    font-size: 12px;
-  }
-
   .mobile-carousel {
-    height: 35vh;
+    height: 40vh;
+    min-height: 250px;
   }
 
   .mobile-image-wrapper {
-    height: 35vh;
-    min-height: 200px;
+    height: 40vh;
+    min-height: 250px;
   }
 }
 
 /* Very Small Screens */
 @media (max-width: 360px) {
-  .resort-heading {
-    font-size: 1.1rem !important;
+  .resort-heading-wrapper {
+    gap: 4px;
   }
   
   .heading-line {
@@ -413,6 +409,16 @@
     white-space: normal;
     line-height: 1.1;
   }
+  
+  .mobile-carousel {
+    height: 35vh;
+    min-height: 220px;
+  }
+  
+  .mobile-image-wrapper {
+    height: 35vh;
+    min-height: 220px;
+  }
 }
 
 /* =============================== */
@@ -420,12 +426,12 @@
 /* =============================== */
 
 @media (min-width: 1400px) {
-  .resort-heading {
-    font-size: 3.5rem !important;
+  .resort-container {
+    max-width: 1320px;
   }
   
   .text-content-column {
-    padding: 50px;
+    padding: 50px 40px;
   }
 }
 
@@ -447,10 +453,6 @@
     padding: 20px 15px;
   }
   
-  .resort-heading {
-    font-size: 2rem !important;
-  }
-  
   .heading-line {
     gap: 6px;
   }
@@ -465,11 +467,43 @@
 
 /* Desktop specific styles */
 @media (min-width: 992px) {
-  .resort-heading {
-    font-size: 2.8rem !important;
-  }
-  
   .heading-line {
     gap: 10px;
+  }
+}
+
+/* =============================== */
+/*     ACCESSIBILITY & PERFORMANCE */
+/* =============================== */
+
+/* Reduce motion for accessibility */
+@media (prefers-reduced-motion: reduce) {
+  .resort-title,
+  .resort-heading,
+  .resort-description {
+    animation: none;
+    opacity: 1;
+    transform: none;
+  }
+  
+  .resort-link .link-underline {
+    transition: none;
+  }
+}
+
+/* Focus styles for accessibility */
+.resort-link:focus {
+  outline: 2px solid rgb(173, 152, 110);
+  outline-offset: 4px;
+}
+
+/* High contrast mode support */
+@media (prefers-contrast: high) {
+  .highlight-gold {
+    color: #000;
+  }
+  
+  .resort-title {
+    color: #000;
   }
 }

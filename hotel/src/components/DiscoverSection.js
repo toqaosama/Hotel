@@ -22,19 +22,26 @@ const fadeUp = {
 
 const ResortSection = () => {
   return (
-    <div className="resort-section-wrapper">
+    <section className="resort-section-wrapper" aria-labelledby="resort-heading">
       <Container className="resort-container">
         <Row className="resort-row align-items-center">
           {/* Left Carousel - Hidden on mobile */}
           <Col xl={4} lg={4} md={4} className="carousel-column left-carousel d-none d-md-block">
-            <Carousel indicators={false} controls={false} fade interval={3000}>
+            <Carousel 
+              indicators={false} 
+              controls={false} 
+              fade 
+              interval={3000}
+              touch={false}
+            >
               {leftImages.map((img, i) => (
                 <Carousel.Item key={i}>
                   <div className="image-wrapper">
                     <img
                       src={img}
-                      alt={`left-${i}`}
+                      alt={`Resort view ${i + 1}`}
                       className="carousel-img"
+                      loading="lazy"
                     />
                   </div>
                 </Carousel.Item>
@@ -48,13 +55,13 @@ const ResortSection = () => {
               className="text-content-wrapper"
               initial="hidden"
               whileInView="visible"
-              viewport={{ once: true }}
+              viewport={{ once: true, margin: "-50px" }}
               variants={fadeUp}
             >
               <p className="resort-title">The Resort</p>
               
               {/* Updated Heading Structure */}
-              <div className="resort-heading-wrapper">
+              <div className="resort-heading-wrapper" id="resort-heading">
                 <div className="heading-line">
                   <h2 className="resort-heading">FIVE</h2>
                   <h2 className="resort-heading">HOTELS</h2>
@@ -87,14 +94,21 @@ const ResortSection = () => {
 
           {/* Right Carousel - Hidden on mobile */}
           <Col xl={4} lg={4} md={4} className="carousel-column right-carousel d-none d-md-block">
-            <Carousel indicators={false} controls={false} fade interval={3000}>
+            <Carousel 
+              indicators={false} 
+              controls={false} 
+              fade 
+              interval={3000}
+              touch={false}
+            >
               {rightImages.map((img, i) => (
                 <Carousel.Item key={i}>
                   <div className="image-wrapper">
                     <img
                       src={img}
-                      alt={`right-${i}`}
+                      alt={`Resort view ${i + 3}`}
                       className="carousel-img"
+                      loading="lazy"
                     />
                   </div>
                 </Carousel.Item>
@@ -104,14 +118,20 @@ const ResortSection = () => {
 
           {/* Mobile Image Carousel - Only shows on mobile */}
           <Col xs={12} className="carousel-column mobile-carousel d-md-none">
-            <Carousel indicators={true} controls={true} interval={4000}>
+            <Carousel 
+              indicators={true} 
+              controls={true} 
+              interval={4000}
+              touch={true}
+            >
               {[...leftImages, ...rightImages].map((img, i) => (
                 <Carousel.Item key={i}>
                   <div className="image-wrapper mobile-image-wrapper">
                     <img
                       src={img}
-                      alt={`resort-${i}`}
+                      alt={`Sani Resort view ${i + 1}`}
                       className="carousel-img mobile-img"
+                      loading="lazy"
                     />
                   </div>
                 </Carousel.Item>
@@ -120,7 +140,7 @@ const ResortSection = () => {
           </Col>
         </Row>
       </Container>
-    </div>
+    </section>
   );
 };
 

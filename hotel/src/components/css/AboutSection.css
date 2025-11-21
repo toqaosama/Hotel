@@ -4,7 +4,7 @@
   text-align: center;
   max-width: 1440px;
   margin: 0 auto;
-  padding: 0px 140px; /* Keep padding for text section only */
+  padding: 0 20px;
   box-sizing: border-box;
 }
 
@@ -14,41 +14,51 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  max-width: 80%;
-  margin: auto;
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 40px 0;
 }
 
 .about-subtitle {
   text-transform: uppercase;
-   font-family: "Effra Light";
-  font-size: 18px;
-  line-height: 20px;
+  font-family: "Effra Light";
+  font-size: 14px;
+  line-height: 16px;
   color: #979796;
-  margin-bottom: 20px;
+  margin-bottom: 15px;
+  letter-spacing: 1px;
 }
 
 .about-title-wrapper {
   display: flex;
   flex-direction: column;
   align-items: center;
-  margin-bottom: 40px;
+  margin-bottom: 30px;
   overflow: hidden;
+  width: 100%;
 }
 
 .about-title {
   font-family: "Effra Light";
-  font-size: 90px;
-  line-height: 76.5px;
+  font-size: 48px;
+  line-height: 1.1;
   color: #ad986e;
   display: flex;
   justify-content: center;
   text-transform: uppercase;
+  flex-wrap: wrap;
+  margin: 5px 0;
 }
 
 .about-title span {
   display: inline-block;
-  margin-right: 16px;
+  margin-right: 8px;
   animation: fadeUp 0.6s ease forwards;
+}
+
+.about-title span:last-child {
+  margin-right: 0;
 }
 
 .about-title span:nth-child(1) { animation-delay: 0.1s; }
@@ -62,11 +72,16 @@
   100% { opacity: 1; transform: translateY(0); }
 }
 
+.about-paragraphs {
+  max-width: 600px;
+  margin: 0 auto;
+}
+
 .about-paragraphs p {
   font-size: 16px;
-  line-height: 24px;
+  line-height: 1.6;
   margin-top: 0;
-  margin-bottom: 15px;
+  margin-bottom: 20px;
 }
 
 .about-link {
@@ -74,6 +89,7 @@
   font-family: 'Effra Regular', sans-serif;
   color: #30332e;
   position: relative;
+  font-size: 16px;
 }
 
 .about-link::after {
@@ -94,11 +110,11 @@
 /* VIDEO SECTION FULL WIDTH */
 .about-video-wrapper {
   position: relative;
-  width: 100vw;      /* Full viewport width */
-  height: 600px;
+  width: 100vw;
+  height: 300px;
   overflow: hidden;
-  margin: 0;         /* Remove margin */
-  padding: 0;        /* Remove padding */
+  margin: 0;
+  padding: 0;
   left: 50%;
   right: 50%;
   margin-left: -50vw;
@@ -109,4 +125,120 @@
   width: 100%;
   height: 100%;
   object-fit: cover;
+}
+
+/* Tablet Styles */
+@media (min-width: 768px) {
+  .about-section {
+    padding: 0 40px;
+  }
+  
+  .about-inner {
+    padding: 60px 0;
+  }
+  
+  .about-subtitle {
+    font-size: 16px;
+    line-height: 18px;
+    margin-bottom: 20px;
+  }
+  
+  .about-title {
+    font-size: 72px;
+    line-height: 1;
+    flex-wrap: nowrap;
+  }
+  
+  .about-title span {
+    margin-right: 12px;
+  }
+  
+  .about-title-wrapper {
+    margin-bottom: 40px;
+  }
+  
+  .about-paragraphs p {
+    font-size: 17px;
+    line-height: 1.7;
+  }
+  
+  .about-video-wrapper {
+    height: 450px;
+  }
+}
+
+/* Desktop Styles */
+@media (min-width: 1024px) {
+  .about-section {
+    padding: 0 80px;
+  }
+  
+  .about-inner {
+    padding: 80px 0;
+  }
+  
+  .about-subtitle {
+    font-size: 18px;
+    line-height: 20px;
+  }
+  
+  .about-title {
+    font-size: 90px;
+    line-height: 76.5px;
+  }
+  
+  .about-title span {
+    margin-right: 16px;
+  }
+  
+  .about-paragraphs p {
+    font-size: 18px;
+    line-height: 1.8;
+  }
+  
+  .about-video-wrapper {
+    height: 600px;
+  }
+}
+
+/* Large Desktop Styles */
+@media (min-width: 1440px) {
+  .about-section {
+    padding: 0 140px;
+  }
+}
+
+/* Small Mobile Adjustments */
+@media (max-width: 480px) {
+  .about-section {
+    padding: 0 15px;
+  }
+  
+  .about-title {
+    font-size: 42px;
+  }
+  
+  .about-title span {
+    margin-right: 4px;
+  }
+  
+  .about-paragraphs p {
+    font-size: 15px;
+    line-height: 1.5;
+  }
+  
+  .about-video-wrapper {
+    height: 250px;
+  }
+}
+
+/* Very small screens */
+@media (max-width: 360px) {
+  .about-title {
+    font-size: 36px;
+  }
+  
+  .about-title span {
+    margin-right: 2px;
+  }
 }

@@ -229,34 +229,191 @@
 }
 
 /* ------------------ RESPONSIVE ------------------ */
+
+/* Tablet */
 @media (max-width: 1024px) {
   .exp3-inner {
     grid-template-columns: 1fr;
+    gap: 30px;
   }
+  
   .exp3-text {
-    padding: 0 30px;
+    padding: 0 60px;
+    order: 2;
   }
+  
+  .exp3-media {
+    order: 1;
+  }
+  
+  .exp3-media-wrapper {
+    height: 60vh;
+  }
+  
   .exp3-video-overlay {
     position: relative;
-    width: 80%;
-    height: 200px;
-    margin: 20px auto;
+    width: 70%;
+    height: 300px;
+    margin: -100px auto 0;
+    top: auto;
+    left: auto;
   }
+  
   .award-inner {
     flex-direction: column;
-  }
-  .award-image, .award-text, .award-link {
-    width: 100%;
     text-align: center;
   }
+  
+  .award-image, 
+  .award-text, 
+  .award-link {
+    width: 100%;
+  }
+  
   .award-link {
     margin-top: 20px;
   }
 }
 
-@media (max-width: 560px) {
-  .exp3-main-picture img.exp3-main-image { height: 300px; }
-  .exp3-hero-video { height: 180px; }
-  .exp3-head { font-size: 30px; }
-  .exp3-section { padding: 70px 0; }
+/* Mobile */
+@media (max-width: 768px) {
+  .exp3-section {
+    padding: 50px 0;
+  }
+  
+  .exp3-text {
+    padding: 0 30px;
+  }
+  
+  .exp3-media-wrapper {
+    height: 50vh;
+  }
+  
+  .exp3-video-overlay {
+    width: 85%;
+    height: 250px;
+    margin: -80px auto 0;
+  }
+  
+  .exp3-head {
+    font-size: 36px;
+    line-height: 1.1;
+  }
+  
+  .exp3-sub {
+    font-size: 16px;
+  }
+  
+  .exp3-paragraphs p {
+    font-size: 16px;
+    line-height: 24px;
+  }
+  
+  .award-section {
+    padding: 30px 0;
+  }
+  
+  .award-inner {
+    padding: 0 20px;
+  }
+  
+  .award-title {
+    font-size: 28px;
+    line-height: 32px;
+  }
+  
+  .award-description {
+    font-size: 15px;
+    line-height: 22px;
+  }
+}
+
+/* Small Mobile */
+@media (max-width: 480px) {
+  .exp3-section {
+    padding: 40px 0;
+  }
+  
+  .exp3-text {
+    padding: 0 20px;
+  }
+  
+  .exp3-media-wrapper {
+    height: 40vh;
+  }
+  
+  .exp3-video-overlay {
+    width: 90%;
+    height: 200px;
+    margin: -60px auto 0;
+  }
+  
+  .exp3-head {
+    font-size: 28px;
+    letter-spacing: -0.5px;
+  }
+  
+  .exp3-head-wrapper {
+    margin: 20px 0;
+  }
+  
+  .exp3-sub {
+    font-size: 14px;
+    margin-bottom: 5px;
+  }
+  
+  .exp3-paragraphs p {
+    font-size: 15px;
+    line-height: 22px;
+    margin-bottom: 15px;
+  }
+  
+  .exp3-link {
+    font-size: 15px;
+  }
+  
+  .award-title {
+    font-size: 24px;
+    line-height: 28px;
+  }
+  
+  .award-subtitle {
+    font-size: 16px;
+  }
+  
+  .award-description {
+    font-size: 14px;
+    line-height: 20px;
+  }
+  
+  .award-image img {
+    width: 120px;
+  }
+}
+
+/* Very small screens */
+@media (max-width: 360px) {
+  .exp3-head {
+    font-size: 24px;
+    width: 100%;
+  }
+  
+  .exp3-media-wrapper {
+    height: 65vh;
+  }
+  
+  .exp3-video-overlay {
+    height: 60vh;
+    margin: -50px auto 0;
+  }
+  
+  .award-title {
+    font-size: 22px;
+    width: 100%;
+  }
+  .expR-section {
+  font-family: "Effra Light", "Effra Regular", Arial, sans-serif;
+  width: 100%;
+  display: flex;
+}
 }
