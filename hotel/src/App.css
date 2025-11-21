@@ -1,12 +1,36 @@
-*{
-  padding: 0%;
-  margin: 0%;
-  
+/* Global reset + responsive base styles */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
 }
+
+:root {
+  /* color tokens (leave as-is or customize) */
+  --brand: #a27f01;
+  --text: #111111;
+  --muted: #666666;
+
+  /* responsive typography -- adjusts between 14px and 18px */
+  --base-font: clamp(14px, 1.5vw + 12px, 18px);
+
+  /* breakpoints */
+  --bp-xs: 360px;
+  --bp-sm: 576px;
+  --bp-md: 768px;
+  --bp-lg: 992px;
+  --bp-xl: 1200px;
+}
+
 .App {
   text-align: center;
-  font-family: "Effra Light";
-  padding: 0%;
+  font-family: "Effra Light", system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+  font-size: var(--base-font);
+  color: var(--text);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
 .App-logo {
@@ -27,13 +51,12 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: #a27f01;
-  
+  color: var(--brand);
+  padding: 1.5rem;
 }
 
 .App-link {
-  color: #a27f01;
+  color: var(--brand);
 }
 
 @keyframes App-logo-spin {
@@ -46,7 +69,7 @@
 }
 
 /* Global button styles: hover color + animated bottom border (loading-bar effect) */
-p, .a {
+.btn-like, p, .a {
   position: relative;
   display: inline-block;
   background: transparent;
@@ -57,27 +80,99 @@ p, .a {
   overflow: hidden;
 }
 
-p::after, .a::after {
+.btn-like::after, p::after, .a::after {
   content: "";
   position: absolute;
   left: 0;
   bottom: 0;
   height: 1px;
   width: 0%;
-  background: #000;
+  background: currentColor;
   transition: width 0.45s ease;
   transform-origin: left center;
 }
 
-p:hover, .a:hover {
-  color: #a27f01;
+.btn-like:hover, p:hover, .a:hover {
+  color: var(--brand);
 }
 
-p:hover::after, .a:hover::after {
+.btn-like:hover::after, p:hover::after, .a:hover::after {
   width: 100%;
 }
 
 /* Make the animated border visible when buttons receive focus (keyboard accessible) */
-p:focus::after, .a:focus::after {
+.btn-like:focus::after, p:focus::after, .a:focus::after {
   width: 100%;
 }
+
+/* Utility container to keep content centered and responsive */
+.container {
+  width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 1rem;
+  padding-right: 1rem;
+  max-width: 1200px;
+}
+
+/* Simple responsive grid helpers */
+.row {
+  display: flex;
+  flex-wrap: wrap;
+  margin-left: -0.5rem;
+  margin-right: -0.5rem;
+}
+.col {
+  padding-left: 0.5rem;
+  padding-right: 0.5rem;
+  flex: 1 1 0%;
+  min-width: 0;
+}
+.col-1 { flex: 0 0 8.333%; max-width: 8.333%; }
+.col-2 { flex: 0 0 16.666%; max-width: 16.666%; }
+.col-3 { flex: 0 0 25%; max-width: 25%; }
+.col-4 { flex: 0 0 33.333%; max-width: 33.333%; }
+.col-6 { flex: 0 0 50%; max-width: 50%; }
+.col-12 { flex: 0 0 100%; max-width: 100%; }
+
+/* Responsive images and media */
+img, picture, video, svg {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* Sections spacing */
+.section {
+  padding: 3rem 0;
+}
+
+/* Small tweaks for text readability */
+h1, h2, h3, h4, h5, h6 {
+  line-height: 1.1;
+  margin-bottom: 0.5rem;
+}
+p { margin-bottom: 1rem; color: var(--muted); }
+
+/* Breakpoint adjustments */
+@media (max-width: var(--bp-sm)) {
+  :root { --base-font: 14px; }
+  .section { padding: 2rem 0; }
+  .App-header { padding: 1rem; }
+}
+
+@media (min-width: calc(var(--bp-sm) + 1px)) and (max-width: var(--bp-md)) {
+  :root { --base-font: 15px; }
+}
+
+@media (min-width: calc(var(--bp-md) + 1px)) {
+  :root { --base-font: 16px; }
+}
+
+@media (min-width: var(--bp-lg)) {
+  .section { padding: 4rem 0; }
+}
+
+/* Accessibility helpers */
+.sr-only { position: absolute !important; height: 1px; width: 1px; overflow: hidden; clip: rect(1px, 1px, 1px, 1px); white-space: nowrap; }
+

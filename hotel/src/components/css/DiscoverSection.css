@@ -1,21 +1,96 @@
 /* =============================== */
-/*   CONTAINER + GENERAL STYLES    */
+/*     MAIN CONTAINER STYLES       */
 /* =============================== */
 
-.resort-container {
-  display: block;
-  box-sizing: border-box;
-  font-family: "Chronicle Display";
-  text-align: center;
+.resort-section-wrapper {
+  width: 100%;
+  background-color: #fff;
+  padding: 80px 0;
+  overflow: hidden;
+}
+
+.resort-container-fluid {
+  width: 100%;
   max-width: 100%;
+  padding: 0;
+  margin: 0;
+}
+
+.resort-row {
+  width: 100%;
+  margin: 0;
+  min-height: 80vh;
 }
 
 /* =============================== */
-/*        TOP SMALL TITLE          */
+/*       COLUMN STYLES            */
 /* =============================== */
 
+.carousel-column {
+  padding: 0;
+  height: 80vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.text-content-column {
+  padding: 40px;
+  height: 80vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #fff;
+}
+
+/* =============================== */
+/*       IMAGE/CAROUSEL STYLES     */
+/* =============================== */
+
+.image-wrapper {
+  width: 100%;
+  height: 80vh;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.carousel-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+/* Ensure carousel takes full width of column */
+.carousel-column .carousel {
+  width: 100%;
+  height: 100%;
+}
+
+.carousel-column .carousel-inner {
+  width: 100%;
+  height: 100%;
+}
+
+.carousel-column .carousel-item {
+  width: 100%;
+  height: 100%;
+}
+
+/* =============================== */
+/*       TEXT CONTENT STYLES       */
+/* =============================== */
+
+.text-content-wrapper {
+  width: 100%;
+  max-width: 500px;
+  text-align: center;
+}
+
 .resort-title {
-  margin-top: 18px;
+  margin-top: 0;
   margin-bottom: 35px;
   font-family: "Effra Regular";
   font-weight: 400;
@@ -24,7 +99,6 @@
   color: #979797;
   letter-spacing: 1px;
   text-align: center;
-
   opacity: 0;
   transform: translateY(20px);
   animation: fadeUp 0.8s ease-out forwards;
@@ -36,23 +110,19 @@
 
 .resort-heading-wrapper {
   overflow: hidden;
+  margin-bottom: 30px;
 }
-
-/* =============================== */
-/*       LINE-BY-LINE ANIMATION    */
-/* =============================== */
 
 .resort-heading {
   opacity: 0;
   transform: translateY(30px);
   animation: revealLine 1s ease-out forwards;
-
-  /* correct final size */
-  font-size: 5rem !important;
+  font-size: 4.5rem !important;
   font-family: "Chronicle Display";
   text-transform: uppercase;
   margin: 0;
   text-align: center;
+  line-height: 1.1;
 }
 
 /* Stagger timing */
@@ -67,48 +137,31 @@
 }
 
 /* =============================== */
-/*         LETTER ANIMATION        */
-/*  (kept and corrected to avoid   */
-/*    conflicting with line anim)  */
-/* =============================== */
-
-.resort-heading span {
-  display: inline-block;
-  font-size: 90px;
-  margin-top: -25px;
-  padding-top: 25px;
-  transform: translateY(100%);
-  animation: letterUp 0.7s ease-out forwards;
-}
-
-/* Delay every letter */
-.resort-heading span:nth-child(1) { animation-delay: 0.2s; }
-.resort-heading span:nth-child(2) { animation-delay: 0.3s; }
-.resort-heading span:nth-child(3) { animation-delay: 0.4s; }
-.resort-heading span:nth-child(4) { animation-delay: 0.5s; }
-.resort-heading span:nth-child(5) { animation-delay: 0.6s; }
-.resort-heading span:nth-child(6) { animation-delay: 0.7s; }
-
-/* =============================== */
 /*        PARAGRAPH SECTION        */
 /* =============================== */
 
 .resort-description {
-  margin-top: 20px;
-  max-width: 90%;
+  margin-top: 30px;
+  margin-bottom: 30px;
   font-size: 16px;
   line-height: 24px;
-  margin-inline: auto;
-
   opacity: 0;
   transform: translateY(20px);
   animation: fadeUp 0.8s ease-out forwards;
   animation-delay: 1.2s;
 }
 
+.resort-description p {
+  margin-bottom: 15px;
+}
+
 /* =============================== */
 /*             LINK BUTTON         */
 /* =============================== */
+
+.button-wrapper {
+  margin-top: 20px;
+}
 
 .resort-link {
   font-family: "Effra Regular";
@@ -117,15 +170,16 @@
   text-decoration: none;
   position: relative;
   display: inline-block;
-  margin-top: 20px;
+  padding: 10px 0;
+  font-size: 16px;
   transition: 0.3s color ease;
 }
 
 /* underline loading bar */
-.resort-link span {
+.link-underline {
   position: absolute;
   left: 0;
-  bottom: -2px;
+  bottom: 0;
   width: 0%;
   height: 2px;
   background-color: rgb(173, 152, 110);
@@ -136,7 +190,7 @@
   color: rgb(173, 152, 110);
 }
 
-.resort-link:hover span {
+.resort-link:hover .link-underline {
   width: 100%;
 }
 
@@ -155,17 +209,6 @@
   }
 }
 
-@keyframes letterUp {
-  from {
-    transform: translateY(100%);
-    opacity: 0;
-  }
-  to {
-    transform: translateY(0%);
-    opacity: 1;
-  }
-}
-
 @keyframes fadeUp {
   from {
     opacity: 0;
@@ -178,46 +221,92 @@
 }
 
 /* =============================== */
-/*            MOBILE STYLE         */
+/*         TABLET STYLES           */
+/* =============================== */
+
+@media (max-width: 1024px) {
+  .resort-heading {
+    font-size: 3.5rem !important;
+  }
+  
+  .text-content-column {
+    padding: 30px;
+  }
+}
+
+/* =============================== */
+/*         MOBILE STYLES           */
 /* =============================== */
 
 @media (max-width: 768px) {
+  .resort-section-wrapper {
+    padding: 60px 0;
+  }
+
+  .resort-row {
+    min-height: auto;
+  }
+
+  .carousel-column,
+  .text-content-column {
+    height: auto;
+    padding: 0;
+  }
+
+  .text-content-column {
+    order: -1;
+    padding: 40px 20px;
+    margin-bottom: 0;
+  }
+
+  .image-wrapper {
+    height: 50vh;
+    min-height: 400px;
+  }
+
+  .resort-heading {
+    font-size: 2.8rem !important;
+  }
+
+  .resort-description {
+    font-size: 15px;
+    line-height: 22px;
+  }
+}
+
+@media (max-width: 576px) {
+  .resort-section-wrapper {
+    padding: 40px 0;
+  }
+
+  .text-content-column {
+    padding: 30px 15px;
+  }
 
   .resort-heading {
     font-size: 2.2rem !important;
   }
 
-  .resort-heading span {
-    font-size: 60px;
+  .resort-title {
+    font-size: 16px;
   }
 
-  .resort-description {
-    font-size: 14px;
-    line-height: 21px;
+  .image-wrapper {
+    height: 40vh;
+    min-height: 300px;
   }
+}
 
-  /* TEXT → CAROUSELS */
-  .mobile-wrapper {
-    display: flex;
-    flex-direction: column;
-    width: 100%;
+/* =============================== */
+/*     LARGE DESKTOP STYLES        */
+/* =============================== */
+
+@media (min-width: 1400px) {
+  .resort-heading {
+    font-size: 5rem !important;
   }
-
-  /* carousels side-by-side on mobile */
-  .carousel-pair {
-    display: flex;
-    flex-direction: row;
-    gap: 15px;
-    margin: 30px 0;
-  }
-
-  .carousel-pair .carousel {
-    flex: 1;
-    height: 45vh;
-  }
-
-  .carousel img {
-    height: 45vh !important;
-    object-fit: cover;
+  
+  .text-content-column {
+    padding: 60px;
   }
 }

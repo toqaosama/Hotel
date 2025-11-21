@@ -1,0 +1,184 @@
+Container fills viewport
+.landing-slider {
+  position: relative;
+  width: 100vw;
+  height: 80vh;
+  overflow: hidden;
+  cursor: none; /* Hide default cursor */
+}
+
+/* Slide images */
+.slide {
+  position: relative;
+  width: 100vw;
+  height: 80vh;
+  overflow: hidden;
+}
+
+.slide-image {
+  width: 100%;
+  height: 80vh;
+  object-fit: cover;
+}
+
+/* Slide text prep */
+.slide-text {
+  position: absolute;
+  width: 100%;
+  top: 50%;  /* Center vertically */
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: white;
+  text-align: center;
+  font-family: "Playfair Display", serif;
+  user-select: none;
+  pointer-events: none;  /* So text doesn't interfere with drag */
+}
+
+.small-title {
+  text-transform: uppercase;
+  font-weight: 600;
+  letter-spacing: 3px;
+  font-size: 14px;
+  margin-bottom: 12px;
+  font-family: "Times New Roman", serif; /* Elegant serif */
+}
+
+.main-title {
+  font-size: 3.75rem;
+  line-height: 1.2;
+  font-weight: 400;
+  max-width: 600px;
+  margin: 0 auto 16px auto;
+}
+
+.slide-cta {
+  font-weight: 600;
+  font-size: 16px;
+  color: white;
+  border-bottom: 1px solid white;
+  text-decoration: none;
+  cursor: pointer;
+  user-select: none;
+  pointer-events: auto;
+}
+
+.slide-cta:hover {
+  color: #ddd;
+  border-color: #ddd;
+}
+
+/* Slick dots customization */
+.slick-dots {
+  position: relative;
+ top: 550px;
+  
+  text-align: center;
+  width: 100%;
+  z-index: 10;
+}
+
+.slick-dots li {
+  margin: 0 6px;
+  width: 12px;
+  height: 12px;
+}
+
+.slick-dots li button:before {
+  font-size: 12px;
+  color: white;
+  opacity: 0.5;
+  transition: opacity 0.3s ease;
+}
+
+.slick-dots li.slick-active button:before {
+  color: white;
+  opacity: 1;
+}
+
+/* Custom circular PREVIOUS cursor */
+.custom-cursor {
+  position: fixed;
+  pointer-events: auto; /* So you can click */
+  transform: translate(-50%, -50%);
+  border: 2px solid white;
+  background-color: transparent;
+  color: white;
+  font-weight: 600;
+  font-size: 12px;
+  padding: 44px 36px; /* Circle shape, bigger padding */
+  border-radius: 50%;
+  white-space: nowrap;
+  user-select: none;
+  z-index: 9999;
+  font-family: "Arial", sans-serif;
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  letter-spacing: 0.04em;
+}
+
+/* Text inside circle */
+.cursor-text {
+  margin-bottom: 8px;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+}
+
+/* Previous slide text next to cursor */
+.prev-slide-text {
+  position: absolute;
+  left: 110%; /* To the right of circle */
+  top: 50%;
+  transform: translateY(-50%);
+  color: white;
+  text-align: left;
+  user-select: none;
+  max-width: 240px;
+  font-family: "Playfair Display", serif;
+  pointer-events: none;
+  line-height: 1.2;
+}
+
+.prev-small-title {
+  font-size: 12px;
+  text-transform: uppercase;
+  letter-spacing: 3px;
+  font-weight: 600;
+  margin-bottom: 4px;
+  font-family: "Times New Roman", serif;
+}
+
+.prev-main-title {
+  font-size: 22px;
+  line-height: 1.1;
+  font-weight: 400;
+  margin-bottom: 6px;
+}
+
+.prev-cta {
+  font-weight: 600;
+  font-size: 12px;
+  color: white;
+  border-bottom: 1px solid white;
+  text-decoration: none;
+}
+
+.prev-cta:hover {
+  color: #ddd;
+  border-color: #ddd;
+}
+
+/* On hover cursor circle and text slight animation */
+.custom-cursor:hover {
+  background-color: white;
+  color: black;
+  border-color: white;
+}
+
+.custom-cursor:hover .prev-cta {
+  color: black;
+  border-color: black;
+}

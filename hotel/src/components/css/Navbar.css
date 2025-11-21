@@ -1,0 +1,336 @@
+/* Import fonts */
+@import url('https://fonts.googleapis.com/css2?family=Effra:wght@400;500&family=Chronicle+Display&display=swap');
+
+/* Base Navbar Styles */
+.custom-navbar {
+  background-color: #fff !important;
+  height: 80px;
+  padding: 0 !important;
+  font-family: 'Effra', sans-serif;
+  position: fixed;
+  width: 100%;
+  top: 0;
+  z-index: 1060;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+  border-bottom: 1px solid #e5e5e5;
+}
+
+.nav-container {
+  padding: 0 40px;
+  max-width: 1440px;
+  margin: 0 auto;
+}
+
+.navbar-brand {
+  padding: 0 !important;
+  margin: 0 !important;
+  display: flex;
+  align-items: center;
+  height: 80px;
+}
+
+.navbar-logo {
+  height: 35px;
+  width: 82px;
+  display: block;
+}
+
+/* Main Navigation */
+.main-nav {
+  height: 80px;
+  align-items: center;
+}
+
+/* Nav Links */
+.nav-link-custom {
+  color: #010400 !important;
+  font-family: 'Effra', sans-serif;
+  font-weight: 500;
+  font-size: 13px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  line-height: 14px;
+  padding: 0 15px !important;
+  display: flex;
+  align-items: center;
+  height: 80px;
+  transition: all 0.3s ease;
+}
+
+.nav-link-custom:hover {
+  color: #ad986e !important;
+}
+
+/* Dropdown Toggle */
+.nav-dropdown-custom .dropdown-toggle {
+  color: #010400 !important;
+  font-family: 'Effra', sans-serif;
+  font-weight: 500;
+  font-size: 13px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  line-height: 14px;
+  padding: 0 15px !important;
+  display: flex;
+  align-items: center;
+  height: 80px;
+  background: none !important;
+  border: none !important;
+  box-shadow: none !important;
+}
+
+.nav-dropdown-custom .dropdown-toggle::after {
+  margin-left: 5px;
+}
+
+/* Mega Menu */
+.nav-dropdown-custom .dropdown-menu {
+  width: 100vw;
+  left: 50% !important;
+  transform: translateX(-50%) !important;
+  top: 80px !important;
+  max-width: 1440px;
+  margin: 0 auto;
+  padding: 40px;
+  border: none;
+  background-color: #fff;
+  border-top: 1px solid #e5e5e5;
+  border-radius: 0;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+}
+
+.dropdown-content-wrapper {
+  display: flex;
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.dropdown-menu-left {
+  width: 60%;
+  display: flex;
+  flex-direction: column;
+}
+
+.dropdown-menu-left .dropdown-item {
+  font-family: 'Chronicle Display', serif;
+  font-size: 25px;
+  text-transform: uppercase;
+  line-height: 28px;
+  letter-spacing: 0.5px;
+  padding: 12px 0;
+  color: #010400 !important;
+  text-decoration: none;
+  background: none;
+  border: none;
+  white-space: nowrap;
+  transition: color 0.3s ease;
+}
+
+.dropdown-menu-left .dropdown-item:hover {
+  color: #ad986e !important;
+  background: none;
+}
+
+.dropdown-menu-right {
+  width: 40%;
+  border-left: 1px solid #e5e5e5;
+  padding-left: 40px;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Image Menu Item */
+.image-menu-item {
+  display: flex !important;
+  flex-direction: row !important;
+  align-items: center;
+  padding: 0 !important;
+  background: none !important;
+  border: none !important;
+  text-decoration: none !important;
+}
+
+.menu-image {
+  width: 114px;
+  height: 86px;
+  object-fit: cover;
+  margin-right: 20px;
+}
+
+.image-caption span {
+  font-family: 'Chronicle Display', serif;
+  font-weight: 400;
+  font-size: 22px;
+  line-height: 22px;
+  color: #010400;
+  text-transform: uppercase;
+}
+
+/* Promo Banner */
+.promo-banner {
+  background: #f8f8f8;
+  padding: 25px;
+  border-radius: 4px;
+}
+
+.promo-title {
+  font-family: 'Effra', sans-serif;
+  font-weight: 600;
+  font-size: 16px;
+  color: #010400;
+  text-transform: uppercase;
+  margin-bottom: 5px;
+}
+
+.promo-subtitle {
+  font-family: 'Effra', sans-serif;
+  font-weight: 600;
+  font-size: 16px;
+  color: #010400;
+  text-transform: uppercase;
+  margin-bottom: 15px;
+}
+
+.promo-discount {
+  font-family: 'Effra', sans-serif;
+  font-size: 14px;
+  line-height: 18px;
+  color: #565656;
+}
+
+/* Book Now Button */
+.book-now-btn {
+  background-color: #ad986e !important;
+  border-color: #ad986e !important;
+  color: #fff !important;
+  font-family: 'Effra', sans-serif;
+  font-weight: 500;
+  font-size: 13px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  min-width: 120px;
+  height: 80px !important;
+  padding: 0 25px !important;
+  border-radius: 0;
+  transition: all 0.3s ease;
+}
+
+.book-now-btn:hover {
+  background-color: #9a8760 !important;
+  border-color: #9a8760 !important;
+}
+
+/* Language Dropdown */
+.language-dropdown .dropdown-toggle {
+  font-size: 13px !important;
+  color: #010400 !important;
+  padding: 0 15px !important;
+}
+
+.language-dropdown .dropdown-menu {
+  min-width: 120px;
+  border: 1px solid #ad986e;
+  border-radius: 2px;
+  padding: 5px 0;
+  margin-top: 0 !important;
+}
+
+.language-dropdown .dropdown-item {
+  font-size: 13px;
+  color: #ad986e !important;
+  padding: 8px 15px;
+  text-transform: uppercase;
+}
+
+.language-dropdown .dropdown-item:hover {
+  background-color: #f8f8f8;
+  color: #9a8760 !important;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 1199px) {
+  .nav-container {
+    padding: 0 20px;
+  }
+  
+  .nav-link-custom,
+  .nav-dropdown-custom .dropdown-toggle {
+    padding: 0 10px !important;
+    font-size: 12px;
+  }
+}
+
+@media (max-width: 991px) {
+  .custom-navbar {
+    height: auto;
+    min-height: 80px;
+  }
+  
+  .navbar-brand {
+    height: 80px;
+  }
+  
+  .nav-link-custom,
+  .nav-dropdown-custom .dropdown-toggle {
+    height: auto;
+    padding: 12px 15px !important;
+    justify-content: flex-start;
+  }
+  
+  .nav-dropdown-custom .dropdown-menu {
+    position: static !important;
+    width: 100% !important;
+    left: 0 !important;
+    transform: none !important;
+    margin-top: 0;
+    padding: 20px;
+  }
+  
+  .dropdown-content-wrapper {
+    flex-direction: column;
+  }
+  
+  .dropdown-menu-left,
+  .dropdown-menu-right {
+    width: 100%;
+    border-left: none;
+    padding-left: 0;
+  }
+  
+  .dropdown-menu-right {
+    margin-top: 20px;
+    padding-top: 20px;
+    border-top: 1px solid #e5e5e5;
+  }
+  
+  .book-now-btn {
+    width: 100%;
+    height: 60px !important;
+    margin-top: 15px;
+  }
+  
+  .main-nav {
+    height: auto;
+  }
+}
+
+@media (max-width: 768px) {
+  .nav-container {
+    padding: 0 15px;
+  }
+  
+  .dropdown-menu-left .dropdown-item {
+    font-size: 20px;
+    line-height: 24px;
+  }
+  
+  .menu-image {
+    width: 80px;
+    height: 60px;
+  }
+  
+  .image-caption span {
+    font-size: 18px;
+  }
+}
