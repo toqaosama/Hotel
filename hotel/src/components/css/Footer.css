@@ -1,42 +1,49 @@
 /* Footer.css */
 .footer {
-  background-color: #1a1a1a;
+  background-color: #000000;
   color: #ffffff;
-  padding: 40px 0 20px;
   font-family: Arial, sans-serif;
 }
 
 .footer-container {
   max-width: 1200px;
   margin: 0 auto;
-  padding: 0 20px;
-}
-
-.brand-name {
-  margin-bottom: 30px;
-  text-align: center;
-}
-
-.brand-sani {
-  font-size: 24px;
-  font-weight: bold;
-  color: #ffffff;
-  display: block;
-}
-
-.brand-resort {
-  font-size: 18px;
-  letter-spacing: 8px;
-  color: #ffffff;
-  display: block;
-  margin-top: 5px;
+  padding: 40px 20px;
 }
 
 .footer-content {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
-  margin-bottom: 40px;
+}
+
+.footer-brand-section {
+  flex: 0 0 25%;
+  min-width: 250px;
+}
+
+.brand-logo {
+  margin-bottom: 20px;
+}
+
+.logo-image {
+  max-width: 180px;
+  height: auto;
+}
+
+.social-media {
+  display: flex;
+  gap: 15px;
+  margin-top: 20px;
+}
+
+.social-media a {
+  color: #cccccc;
+  transition: color 0.3s;
+}
+
+.social-media a:hover {
+  color: #ffffff;
 }
 
 .footer-section {
@@ -77,6 +84,7 @@
 
 .contact-info {
   color: #cccccc;
+  margin-bottom: 20px;
 }
 
 .contact-email, .contact-phone {
@@ -85,8 +93,10 @@
 }
 
 .footer-bottom {
+  background-color: #000000;
   border-top: 1px solid #333333;
-  padding-top: 20px;
+  padding: 20px 0;
+  width: 100%;
 }
 
 .footer-policies {
@@ -94,6 +104,9 @@
   flex-wrap: wrap;
   justify-content: center;
   gap: 15px;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
 }
 
 .footer-policies a {
@@ -112,6 +125,15 @@
 @media (max-width: 768px) {
   .footer-content {
     flex-direction: column;
+  }
+  
+  .footer-brand-section {
+    flex: 1;
+    text-align: center;
+  }
+  
+  .social-media {
+    justify-content: center;
   }
   
   .footer-section {

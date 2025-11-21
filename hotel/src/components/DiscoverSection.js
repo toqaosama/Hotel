@@ -23,10 +23,10 @@ const fadeUp = {
 const ResortSection = () => {
   return (
     <div className="resort-section-wrapper">
-      <Container fluid className="resort-container-fluid">
+      <Container className="resort-container">
         <Row className="resort-row align-items-center">
-          {/* Left Carousel */}
-          <Col lg={4} md={4} className="carousel-column left-carousel">
+          {/* Left Carousel - Hidden on mobile */}
+          <Col xl={4} lg={4} md={4} className="carousel-column left-carousel d-none d-md-block">
             <Carousel indicators={false} controls={false} fade interval={3000}>
               {leftImages.map((img, i) => (
                 <Carousel.Item key={i}>
@@ -42,8 +42,8 @@ const ResortSection = () => {
             </Carousel>
           </Col>
 
-          {/* Middle Text Content */}
-          <Col lg={4} md={4} className="text-content-column">
+          {/* Middle Text Content - Full width on mobile */}
+          <Col xl={4} lg={4} md={4} xs={12} className="text-content-column">
             <motion.div
               className="text-content-wrapper"
               initial="hidden"
@@ -52,11 +52,17 @@ const ResortSection = () => {
               variants={fadeUp}
             >
               <p className="resort-title">The Resort</p>
+              
+              {/* Updated Heading Structure */}
               <div className="resort-heading-wrapper">
-                <h2 className="resort-heading">FIVE</h2>
-                <h2 className="resort-heading">HOTELS</h2>
-                <h2 className="resort-heading highlight-gold">ONE</h2>
-                <h2 className="resort-heading highlight-gold">RESORT</h2>
+                <div className="heading-line">
+                  <h2 className="resort-heading">FIVE</h2>
+                  <h2 className="resort-heading">HOTELS</h2>
+                </div>
+                <div className="heading-line">
+                  <h2 className="resort-heading highlight-gold">ONE</h2>
+                  <h2 className="resort-heading highlight-gold">RESORT</h2>
+                </div>
               </div>
 
               <div className="resort-description">
@@ -79,8 +85,8 @@ const ResortSection = () => {
             </motion.div>
           </Col>
 
-          {/* Right Carousel */}
-          <Col lg={4} md={4} className="carousel-column right-carousel">
+          {/* Right Carousel - Hidden on mobile */}
+          <Col xl={4} lg={4} md={4} className="carousel-column right-carousel d-none d-md-block">
             <Carousel indicators={false} controls={false} fade interval={3000}>
               {rightImages.map((img, i) => (
                 <Carousel.Item key={i}>
@@ -89,6 +95,23 @@ const ResortSection = () => {
                       src={img}
                       alt={`right-${i}`}
                       className="carousel-img"
+                    />
+                  </div>
+                </Carousel.Item>
+              ))}
+            </Carousel>
+          </Col>
+
+          {/* Mobile Image Carousel - Only shows on mobile */}
+          <Col xs={12} className="carousel-column mobile-carousel d-md-none">
+            <Carousel indicators={true} controls={true} interval={4000}>
+              {[...leftImages, ...rightImages].map((img, i) => (
+                <Carousel.Item key={i}>
+                  <div className="image-wrapper mobile-image-wrapper">
+                    <img
+                      src={img}
+                      alt={`resort-${i}`}
+                      className="carousel-img mobile-img"
                     />
                   </div>
                 </Carousel.Item>

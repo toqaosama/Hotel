@@ -5,21 +5,21 @@
 .resort-section-wrapper {
   width: 100%;
   background-color: #fff;
-  padding: 80px 0;
+  padding: 40px 0;
   overflow: hidden;
 }
 
-.resort-container-fluid {
+.resort-container {
   width: 100%;
   max-width: 100%;
-  padding: 0;
-  margin: 0;
+  padding: 0 12px;
+  margin: 0 auto;
 }
 
 .resort-row {
   width: 100%;
   margin: 0;
-  min-height: 80vh;
+  min-height: auto;
 }
 
 /* =============================== */
@@ -28,15 +28,15 @@
 
 .carousel-column {
   padding: 0;
-  height: 80vh;
+  height: 60vh;
   display: flex;
   align-items: center;
   justify-content: center;
 }
 
 .text-content-column {
-  padding: 40px;
-  height: 80vh;
+  padding: 30px 20px;
+  height: auto;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -49,7 +49,7 @@
 
 .image-wrapper {
   width: 100%;
-  height: 80vh;
+  height: 60vh;
   overflow: hidden;
   display: flex;
   align-items: center;
@@ -85,19 +85,20 @@
 
 .text-content-wrapper {
   width: 100%;
-  max-width: 500px;
+  max-width: 100%;
   text-align: center;
+  padding: 0 5px;
 }
 
 .resort-title {
   margin-top: 0;
-  margin-bottom: 35px;
-  font-family: "Effra Regular";
+  margin-bottom: 20px;
+  font-family: "Effra Regular", sans-serif;
   font-weight: 400;
-  font-size: 18px;
+  font-size: 14px;
   text-transform: uppercase;
   color: #979797;
-  letter-spacing: 1px;
+  letter-spacing: 0.5px;
   text-align: center;
   opacity: 0;
   transform: translateY(20px);
@@ -105,31 +106,45 @@
 }
 
 /* =============================== */
-/*     MAIN HEADING WRAPPER        */
+/*     UPDATED HEADING STRUCTURE   */
 /* =============================== */
 
 .resort-heading-wrapper {
   overflow: hidden;
-  margin-bottom: 30px;
+  margin-bottom: 25px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.heading-line {
+  display: flex;
+  justify-content: center;
+  flex-wrap: nowrap;
+  gap: 8px;
+  width: 100%;
 }
 
 .resort-heading {
   opacity: 0;
   transform: translateY(30px);
   animation: revealLine 1s ease-out forwards;
-  font-size: 4.5rem !important;
-  font-family: "Chronicle Display";
+  font-size: 2rem !important;
+  font-family: "Chronicle Display", serif;
   text-transform: uppercase;
   margin: 0;
   text-align: center;
-  line-height: 1.1;
+  line-height: 1;
+  font-weight: 300;
+  white-space: nowrap;
+  flex-shrink: 0;
 }
 
 /* Stagger timing */
 .resort-heading:nth-child(1) { animation-delay: 0.2s; }
-.resort-heading:nth-child(2) { animation-delay: 0.45s; }
-.resort-heading:nth-child(3) { animation-delay: 0.7s; }
-.resort-heading:nth-child(4) { animation-delay: 0.95s; }
+.resort-heading:nth-child(2) { animation-delay: 0.4s; }
+.resort-heading:nth-child(3) { animation-delay: 0.6s; }
+.resort-heading:nth-child(4) { animation-delay: 0.8s; }
 
 /* Gold color */
 .highlight-gold {
@@ -141,18 +156,23 @@
 /* =============================== */
 
 .resort-description {
-  margin-top: 30px;
-  margin-bottom: 30px;
-  font-size: 16px;
-  line-height: 24px;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  font-size: 14px;
+  line-height: 1.5;
   opacity: 0;
   transform: translateY(20px);
   animation: fadeUp 0.8s ease-out forwards;
-  animation-delay: 1.2s;
+  animation-delay: 1s;
+  color: #555;
 }
 
 .resort-description p {
-  margin-bottom: 15px;
+  margin-bottom: 12px;
+  font-family: "Effra Regular", sans-serif;
+  font-weight: 400;
+  word-wrap: break-word;
+  hyphens: auto;
 }
 
 /* =============================== */
@@ -160,18 +180,18 @@
 /* =============================== */
 
 .button-wrapper {
-  margin-top: 20px;
+  margin-top: 15px;
 }
 
 .resort-link {
-  font-family: "Effra Regular";
-  font-weight: 400;
+  font-family: "Effra Regular", sans-serif;
+  font-weight: 500;
   color: rgb(1, 4, 0);
   text-decoration: none;
   position: relative;
   display: inline-block;
-  padding: 10px 0;
-  font-size: 16px;
+  padding: 8px 0;
+  font-size: 14px;
   transition: 0.3s color ease;
 }
 
@@ -181,7 +201,7 @@
   left: 0;
   bottom: 0;
   width: 0%;
-  height: 2px;
+  height: 1.5px;
   background-color: rgb(173, 152, 110);
   transition: width 0.5s ease;
 }
@@ -226,11 +246,11 @@
 
 @media (max-width: 1024px) {
   .resort-heading {
-    font-size: 3.5rem !important;
+    font-size: 2.5rem !important;
   }
   
   .text-content-column {
-    padding: 30px;
+    padding: 25px 15px;
   }
 }
 
@@ -240,60 +260,158 @@
 
 @media (max-width: 768px) {
   .resort-section-wrapper {
-    padding: 60px 0;
+    padding: 30px 0;
+  }
+
+  .resort-container {
+    padding: 0 10px;
   }
 
   .resort-row {
     min-height: auto;
+    flex-direction: column;
   }
 
   .carousel-column,
   .text-content-column {
     height: auto;
     padding: 0;
+    width: 100%;
   }
 
+  /* Text content styling for mobile */
   .text-content-column {
-    order: -1;
-    padding: 40px 20px;
+    order: 2;
+    padding: 25px 12px;
     margin-bottom: 0;
+    height: auto;
+    min-height: auto;
   }
 
-  .image-wrapper {
-    height: 50vh;
-    min-height: 400px;
+  .text-content-wrapper {
+    max-width: 100%;
+    padding: 0 8px;
   }
 
+  /* Mobile heading sizes - FIXED TEXT BREAKING */
   .resort-heading {
-    font-size: 2.8rem !important;
+    font-size: 1.5rem !important;
+    line-height: 1;
+    white-space: nowrap;
   }
 
-  .resort-description {
-    font-size: 15px;
-    line-height: 22px;
-  }
-}
-
-@media (max-width: 576px) {
-  .resort-section-wrapper {
-    padding: 40px 0;
+  .resort-heading-wrapper {
+    margin-bottom: 20px;
+    gap: 6px;
   }
 
-  .text-content-column {
-    padding: 30px 15px;
-  }
-
-  .resort-heading {
-    font-size: 2.2rem !important;
+  .heading-line {
+    gap: 6px;
+    justify-content: center;
   }
 
   .resort-title {
-    font-size: 16px;
+    font-size: 12px;
+    margin-bottom: 15px;
+    letter-spacing: 0.3px;
   }
 
-  .image-wrapper {
+  .resort-description {
+    font-size: 13px;
+    line-height: 1.4;
+    margin: 15px 0;
+  }
+
+  .resort-description p {
+    margin-bottom: 10px;
+  }
+
+  /* Mobile carousel styling */
+  .mobile-carousel {
+    order: 1;
+    margin-bottom: 0;
     height: 40vh;
-    min-height: 300px;
+  }
+
+  .mobile-image-wrapper {
+    height: 40vh;
+    min-height: 250px;
+  }
+
+  .button-wrapper {
+    margin-top: 12px;
+  }
+
+  .resort-link {
+    font-size: 13px;
+    padding: 6px 0;
+  }
+}
+
+/* Extra Small Mobile Devices */
+@media (max-width: 480px) {
+  .resort-section-wrapper {
+    padding: 25px 0;
+  }
+
+  .resort-container {
+    padding: 0 8px;
+  }
+
+  .text-content-column {
+    padding: 20px 8px;
+  }
+
+  .text-content-wrapper {
+    padding: 0 5px;
+  }
+
+  /* Even smaller text for very small screens */
+  .resort-heading {
+    font-size: 1.3rem !important;
+  }
+
+  .heading-line {
+    gap: 4px;
+  }
+
+  .resort-title {
+    font-size: 11px;
+  }
+
+  .resort-description {
+    font-size: 12px;
+    line-height: 1.3;
+  }
+
+  .resort-link {
+    font-size: 12px;
+  }
+
+  .mobile-carousel {
+    height: 35vh;
+  }
+
+  .mobile-image-wrapper {
+    height: 35vh;
+    min-height: 200px;
+  }
+}
+
+/* Very Small Screens */
+@media (max-width: 360px) {
+  .resort-heading {
+    font-size: 1.1rem !important;
+  }
+  
+  .heading-line {
+    flex-direction: column;
+    gap: 2px;
+  }
+  
+  .resort-heading {
+    white-space: normal;
+    line-height: 1.1;
   }
 }
 
@@ -303,10 +421,55 @@
 
 @media (min-width: 1400px) {
   .resort-heading {
-    font-size: 5rem !important;
+    font-size: 3.5rem !important;
   }
   
   .text-content-column {
-    padding: 60px;
+    padding: 50px;
+  }
+}
+
+/* =============================== */
+/*     MEDIUM DEVICES (Tablet)     */
+/* =============================== */
+
+@media (min-width: 768px) and (max-width: 991px) {
+  .carousel-column {
+    height: 50vh;
+  }
+  
+  .image-wrapper {
+    height: 50vh;
+  }
+  
+  .text-content-column {
+    height: 50vh;
+    padding: 20px 15px;
+  }
+  
+  .resort-heading {
+    font-size: 2rem !important;
+  }
+  
+  .heading-line {
+    gap: 6px;
+  }
+}
+
+/* Hide mobile carousel on tablet and desktop */
+@media (min-width: 768px) {
+  .mobile-carousel {
+    display: none !important;
+  }
+}
+
+/* Desktop specific styles */
+@media (min-width: 992px) {
+  .resort-heading {
+    font-size: 2.8rem !important;
+  }
+  
+  .heading-line {
+    gap: 10px;
   }
 }

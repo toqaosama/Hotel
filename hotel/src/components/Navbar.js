@@ -11,6 +11,24 @@ const BootstrapNavbar = () => {
     setExpanded(false);
   };
 
+  // Mega Menu content for each dropdown
+  const renderMegaMenu = (leftItems, rightContent) => (
+    <div className="mega-menu-content">
+      <div className="mega-menu-columns">
+        <div className="mega-menu-left">
+          {leftItems.map((item, index) => (
+            <NavDropdown.Item key={index} href="#" onClick={handleNavClick} className="mega-menu-item">
+              {item}
+            </NavDropdown.Item>
+          ))}
+        </div>
+        <div className="mega-menu-right">
+          {rightContent}
+        </div>
+      </div>
+    </div>
+  );
+
   return (
     <Navbar 
       expand="lg" 
@@ -52,28 +70,28 @@ const BootstrapNavbar = () => {
                 id="resort-dropdown"
                 className="nav-dropdown-custom"
               >
-                <div className="dropdown-content-wrapper">
-                  <div className="dropdown-menu-left">
-                    <NavDropdown.Item href="#" onClick={handleNavClick}>BEACHES & POOLS</NavDropdown.Item>
-                    <NavDropdown.Item href="#" onClick={handleNavClick}>RESTAURANTS & BARS</NavDropdown.Item>
-                    <NavDropdown.Item href="#" onClick={handleNavClick}>GASTRONOMY</NavDropdown.Item>
-                    <NavDropdown.Item href="#" onClick={handleNavClick}>EXPERIENCES</NavDropdown.Item>
-                    <NavDropdown.Item href="#" onClick={handleNavClick}>THE MARINA</NavDropdown.Item>
-                    <NavDropdown.Item href="#" onClick={handleNavClick}>GALLERY</NavDropdown.Item>
-                  </div>
-                  <div className="dropdown-menu-right">
-                    <NavDropdown.Item href="#" onClick={handleNavClick} className="image-menu-item">
+                {renderMegaMenu(
+                  [
+                    "BEACHES & POOLS",
+                    "RESTAURANTS & BARS", 
+                    "WELLNESS & SPA",
+                    "ACTIVITIES",
+                    "EVENTS",
+                    "SUSTAINABILITY"
+                  ],
+                  <div className="mega-menu-promo">
+                    <div className="promo-image-item">
                       <img
                         src="https://sani-prd-cdn.azureedge.net/media/dwfg4dks/sani_masterplan_1_2880x1918.jpg"
                         alt="Resort Map"
-                        className="menu-image"
+                        className="promo-image"
                       />
-                      <div className="image-caption">
+                      <div className="promo-text-center">
                         <span>RESORT MAP</span>
                       </div>
-                    </NavDropdown.Item>
+                    </div>
                   </div>
-                </div>
+                )}
               </NavDropdown>
 
               {/* HOTELS Dropdown */}
@@ -82,34 +100,193 @@ const BootstrapNavbar = () => {
                 id="hotels-dropdown"
                 className="nav-dropdown-custom"
               >
-                <div className="dropdown-content-wrapper">
-                  <div className="dropdown-menu-left">
-                    <NavDropdown.Item href="#" onClick={handleNavClick}>HOTEL 1</NavDropdown.Item>
-                    <NavDropdown.Item href="#" onClick={handleNavClick}>HOTEL 2</NavDropdown.Item>
-                    <NavDropdown.Item href="#" onClick={handleNavClick}>HOTEL 3</NavDropdown.Item>
-                    <NavDropdown.Item href="#" onClick={handleNavClick}>HOTEL 4</NavDropdown.Item>
-                  </div>
-                  <div className="dropdown-menu-right">
-                    <div className="promo-banner">
-                      <div className="promo-text">
-                        <div className="promo-title">FREE TRANSFERS</div>
-                        <div className="promo-subtitle">FREE FULL BOARD</div>
-                        <div className="promo-discount">
-                          For a limited time only, secure an additional 5% discount when you book before December 1st
-                        </div>
+                {renderMegaMenu(
+                  [
+                    "SANI LODGE",
+                    "SANI CLUB",
+                    "SANI SUITES", 
+                    "SANI VILLAS",
+                    "SANI GRAND",
+                    "ALL HOTELS"
+                  ],
+                  <div className="mega-menu-promo">
+                    <div className="promo-banner-center">
+                      <div className="promo-title-center">FREE TRANSFERS</div>
+                      <div className="promo-title-center">FREE FULL BOARD</div>
+                      <div className="promo-discount-center">
+                        For a limited time only, secure an additional 5% discount when you book before December 1st
                       </div>
                     </div>
                   </div>
-                </div>
+                )}
               </NavDropdown>
 
-              {/* Other Nav Items */}
-              <Nav.Link href="#" onClick={handleNavClick} className="nav-link-custom">FAMILIES</Nav.Link>
-              <Nav.Link href="#" onClick={handleNavClick} className="nav-link-custom">GASTRONOMY</Nav.Link>
-              <Nav.Link href="#" onClick={handleNavClick} className="nav-link-custom">EXPERIENCES</Nav.Link>
-              <Nav.Link href="#" onClick={handleNavClick} className="nav-link-custom">OFFERS</Nav.Link>
-              <Nav.Link href="#" onClick={handleNavClick} className="nav-link-custom">THE MARINA</Nav.Link>
-              <Nav.Link href="#" onClick={handleNavClick} className="nav-link-custom">GALLERY</Nav.Link>
+              {/* FAMILIES Dropdown */}
+              <NavDropdown 
+                title="FAMILIES" 
+                id="families-dropdown"
+                className="nav-dropdown-custom"
+              >
+                {renderMegaMenu(
+                  [
+                    "KIDS CLUBS",
+                    "FAMILY ACTIVITIES",
+                    "FAMILY ROOMS",
+                    "BABY SERVICES",
+                    "TEEN ACTIVITIES",
+                    "FAMILY OFFERS"
+                  ],
+                  <div className="mega-menu-promo">
+                    <div className="promo-banner-center">
+                      <div className="promo-title-center">FAMILY FUN</div>
+                      <div className="promo-discount-center">
+                        Special activities and entertainment for all ages
+                      </div>
+                    </div>
+                  </div>
+                )}
+              </NavDropdown>
+
+              {/* GASTRONOMY Dropdown */}
+              <NavDropdown 
+                title="GASTRONOMY" 
+                id="gastronomy-dropdown"
+                className="nav-dropdown-custom"
+              >
+                {renderMegaMenu(
+                  [
+                    "RESTAURANTS",
+                    "BARS & LOUNGES", 
+                    "WINE TASTING",
+                    "COOKING CLASSES",
+                    "PRIVATE DINING",
+                    "CHEF'S TABLE"
+                  ],
+                  <div className="mega-menu-promo">
+                    <div className="promo-image-item">
+                      <img
+                        src="https://images.unsplash.com/photo-1414235077428-338989a2e8c0?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80"
+                        alt="Fine Dining"
+                        className="promo-image"
+                      />
+                      <div className="promo-text-center">
+                        <span>FINE DINING</span>
+                      </div>
+                    </div>
+                  </div>
+                )}
+              </NavDropdown>
+
+              {/* EXPERIENCES Dropdown */}
+              <NavDropdown 
+                title="EXPERIENCES" 
+                id="experiences-dropdown"
+                className="nav-dropdown-custom"
+              >
+                {renderMegaMenu(
+                  [
+                    "WATER SPORTS",
+                    "LAND ACTIVITIES",
+                    "WELLNESS RETREATS", 
+                    "CULTURAL TOURS",
+                    "ADVENTURE SPORTS",
+                    "SEASONAL EVENTS"
+                  ],
+                  <div className="mega-menu-promo">
+                    <div className="promo-banner-center">
+                      <div className="promo-title-center">UNFORGETTABLE</div>
+                      <div className="promo-title-center">EXPERIENCES</div>
+                      <div className="promo-discount-center">
+                        Create lasting memories with our curated activities
+                      </div>
+                    </div>
+                  </div>
+                )}
+              </NavDropdown>
+
+              {/* OFFERS Dropdown */}
+              <NavDropdown 
+                title="OFFERS" 
+                id="offers-dropdown"
+                className="nav-dropdown-custom"
+              >
+                {renderMegaMenu(
+                  [
+                    "SPECIAL PACKAGES",
+                    "EARLY BOOKING",
+                    "LAST MINUTE DEALS",
+                    "LONG STAY OFFERS", 
+                    "HONEYMOON PACKAGES",
+                    "ALL OFFERS"
+                  ],
+                  <div className="mega-menu-promo">
+                    <div className="promo-banner-center">
+                      <div className="promo-title-center">SPECIAL OFFER</div>
+                      <div className="promo-title-center">-20% OFF</div>
+                      <div className="promo-discount-center">
+                        Book now and save 20% on selected packages
+                      </div>
+                    </div>
+                  </div>
+                )}
+              </NavDropdown>
+
+              {/* THE MARINA Dropdown */}
+              <NavDropdown 
+                title="THE MARINA" 
+                id="marina-dropdown"
+                className="nav-dropdown-custom"
+              >
+                {renderMegaMenu(
+                  [
+                    "YACHT SERVICES",
+                    "MARINA FACILITIES", 
+                    "BOAT RENTALS",
+                    "FISHING TRIPS",
+                    "SUNSET CRUISES",
+                    "MARINA RESTAURANTS"
+                  ],
+                  <div className="mega-menu-promo">
+                    <div className="promo-image-item">
+                      <img
+                        src="https://images.unsplash.com/photo-1501950183564-3c8ac97d08f0?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80"
+                        alt="Marina View"
+                        className="promo-image"
+                      />
+                      <div className="promo-text-center">
+                        <span>MARINA VIEW</span>
+                      </div>
+                    </div>
+                  </div>
+                )}
+              </NavDropdown>
+
+              {/* GALLERY Dropdown */}
+              <NavDropdown 
+                title="GALLERY" 
+                id="gallery-dropdown"
+                className="nav-dropdown-custom"
+              >
+                {renderMegaMenu(
+                  [
+                    "PHOTO GALLERY",
+                    "VIDEO TOUR", 
+                    "VIRTUAL TOUR",
+                    "ROOM TOUR",
+                    "RESTAURANT GALLERY",
+                    "360° VIEWS"
+                  ],
+                  <div className="mega-menu-promo">
+                    <div className="promo-banner-center">
+                      <div className="promo-title-center">EXPLORE OUR</div>
+                      <div className="promo-title-center">GALLERY</div>
+                      <div className="promo-discount-center">
+                        Discover the beauty of our resort through photos and videos
+                      </div>
+                    </div>
+                  </div>
+                )}
+              </NavDropdown>
 
               {/* Language Dropdown */}
               <NavDropdown 
@@ -121,6 +298,7 @@ const BootstrapNavbar = () => {
                 <NavDropdown.Item href="#" onClick={handleNavClick}>ENGLISH</NavDropdown.Item>
                 <NavDropdown.Item href="#" onClick={handleNavClick}>GREEK</NavDropdown.Item>
                 <NavDropdown.Item href="#" onClick={handleNavClick}>FRENCH</NavDropdown.Item>
+                <NavDropdown.Item href="#" onClick={handleNavClick}>GERMAN</NavDropdown.Item>
               </NavDropdown>
             </Nav>
 
