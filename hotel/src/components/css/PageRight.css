@@ -78,3 +78,36 @@
   line-height: 24px;
   color: #1c1c1c;
 }
+
+@media (max-width: 768px) {
+  .expR-section {
+    padding: 60px 20px; /* Smaller padding on mobile */
+  }
+
+  .expR-bg-anim {
+    width: 100% !important; /* force full width */
+    opacity: 1 !important;   /* force opacity */
+    animation: expR-bgLoad 1s ease-out forwards;
+    left: 0;
+    right: 0;
+  }
+
+  .expR-inner {
+    grid-template-columns: 1fr; /* single column on mobile for layout */
+    gap: 30px;
+  }
+
+  .expR-left .expR-head {
+    font-size: 28px;
+    transform: translateY(20px);
+  }
+
+  .expR-left .expR-paragraphs p {
+    font-size: 14px;
+    line-height: 20px;
+  }
+
+  .expR-right img.expR-image {
+    height: 250px;
+  }
+}

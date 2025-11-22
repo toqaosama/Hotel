@@ -146,3 +146,29 @@
     gap: 10px;
   }
 }
+
+
+/* Responsive tweaks for smaller devices */
+@media (max-width: 768px) {
+  .footer-container,
+  .footer-content {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .footer-section,
+  .footer-brand-section {
+    flex: unset;
+    min-width: unset;
+  }
+
+  .footer-policies {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .social-media {
+    justify-content: center;
+  }
+}

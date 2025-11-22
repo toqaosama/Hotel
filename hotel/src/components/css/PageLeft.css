@@ -78,3 +78,37 @@
   line-height: 24px;
   color: #1c1c1c;
 }
+
+@media (max-width: 768px) {
+  .expL-section {
+    padding: 60px 20px; /* reduced padding for small screens */
+  }
+
+  .expL-inner {
+    grid-template-columns: 1fr; /* stack columns vertically */
+    gap: 30px;
+  }
+
+  .expL-left img.expL-image {
+    height: 250px; /* smaller image height */
+    object-fit: cover;
+    border-radius: 2px;
+  }
+
+  .expL-right .expL-head {
+    font-size: 28px; /* smaller font size for headings */
+    transform: translateY(20px);
+  }
+
+  .expL-right .expL-paragraphs p {
+    font-size: 14px;
+    line-height: 20px;
+  }
+
+  /* Ensure background animation is visible and works */
+  .expL-bg-anim {
+    width: 100% !important;
+    opacity: 1 !important;
+    animation: expL-bgLoad 1s ease-out forwards;
+  }
+}

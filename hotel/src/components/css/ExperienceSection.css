@@ -145,3 +145,31 @@
   .exp2-head { font-size: 30px; }
   .exp2-section { padding: 70px 30px; }
 }
+@media (max-width: 414px) {
+  .exp2-overlay-small {
+    width: 100%;
+    position: relative;
+    top: 0;
+    left: 0;
+    margin: 10px 0;
+  }
+
+  .exp2-main-picture img.exp2-main-image {
+    height: auto; /* allow image to scale naturally */
+    max-height: 300px;
+  }
+
+  .exp2-section {
+    padding: 50px 15px;
+  }
+
+  .exp2-head {
+    font-size: 24px;
+    line-height: 1.2;
+  }
+
+  .exp2-paragraphs p {
+    font-size: 15px;
+    line-height: 22px;
+  }
+}
