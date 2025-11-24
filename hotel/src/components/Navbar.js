@@ -35,7 +35,7 @@ const BootstrapNavbar = () => {
           </div>
 
           {/* Main Navigation */}
-          <Menu setActive={setActive} bookNowBtn={<button className="book-now-btn">BOOK NOW</button>}>
+          <Menu setActive={setActive}>
             {/* THE RESORT */}
             <MenuItem setActive={setActive} active={active} item="THE RESORT" isMobile={isMobile}>
               <div className="mega-menu-content">
@@ -260,6 +260,11 @@ const BootstrapNavbar = () => {
               </div>
             </MenuItem>
           </Menu>
+
+          {/* Book Now Button */}
+          <button className="book-now-btn">
+            BOOK NOW
+          </button>
         </div>
       </div>
 

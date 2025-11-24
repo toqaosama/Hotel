@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 
-export const Menu = ({ setActive, children, bookNowBtn }) => {
+export const Menu = ({ setActive, children }) => {
   const [isSidebarOpen, setIsSidebarOpen] = useState(false);
 
   return (
@@ -26,7 +26,9 @@ export const Menu = ({ setActive, children, bookNowBtn }) => {
             className="sidebar-overlay" 
             onClick={() => setIsSidebarOpen(false)}
           />
-          <div className="mobile-sidebar">          {children}         {bookNowBtn && <div className="mobile-sidebar-footer">{bookNowBtn}</div>}       </div>
+          <div className="mobile-sidebar">
+            {children}
+          </div>
         </>
       )}
     </>
@@ -119,4 +121,3 @@ export const ProductItem = ({ title, href, src, description }) => {
     </a>
   );
 };
-
