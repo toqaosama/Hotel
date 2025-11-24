@@ -1,25 +1,80 @@
 import React, { useState } from "react";
 
 export const Menu = ({ setActive, children }) => {
+  const [isSidebarOpen, setIsSidebarOpen] = useState(false);
+
   return (
-    <div className="navbar-menu-container">
-      {children}
-    </div>
+    <>
+      <div className="navbar-menu-container">
+        {children}
+      </div>
+      {/* Hamburger Menu Button - Only visible on mobile */}
+      <button 
+        className="hamburger-menu"
+        onClick={() => setIsSidebarOpen(!isSidebarOpen)}
+        aria-label="Toggle menu"
+      >
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+      
+      {/* Mobile Sidebar */}
+      {isSidebarOpen && (
+        <>
+          <div 
+            className="sidebar-overlay" 
+            onClick={() => setIsSidebarOpen(false)}
+          />
+          <div className="mobile-sidebar">
+            {children}
+          </div>
+        </>
+      )}
+    </>
   );
 };
 
-export const MenuItem = ({ setActive, active, item, children }) => {
+export const MenuItem = ({ setActive, active, item, children, isMobile }) => {
   const isActive = active === item;
+  const [isExpanded, setIsExpanded] = useState(false);
 
   const handleKeyDown = (e) => {
     if (e.key === "Enter" || e.key === " ") {
       e.preventDefault();
       setActive(isActive ? null : item);
+      setIsExpanded(!isExpanded);
     }
     if (e.key === "Escape") {
       setActive(null);
+      setIsExpanded(false);
     }
   };
+
+  const handleMobileToggle = () => {
+    setIsExpanded(!isExpanded);
+  };
+
+  if (isMobile) {
+    return (
+      <div className="mobile-menu-item">
+        <button
+          className={`mobile-menu-trigger ${isExpanded ? "expanded" : ""}`}
+          onClick={handleMobileToggle}
+          onKeyDown={handleKeyDown}
+          tabIndex={0}
+        >
+          <span className="menu-title">{item}</span>
+          <span className="toggle-icon">▼</span>
+        </button>
+        {isExpanded && (
+          <div className="mobile-menu-content">
+            {children}
+          </div>
+        )}
+      </div>
+    );
+  }
 
   return (
     <div

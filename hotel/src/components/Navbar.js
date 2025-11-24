@@ -1,10 +1,23 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Menu, MenuItem, HoveredLink } from './ui/Menu';
 import './css/Navbar.css';
 import Logo from '../assets/images/logo.png';
 
 const BootstrapNavbar = () => {
   const [active, setActive] = useState(null);
+  const [isMobile, setIsMobile] = useState(window.innerWidth < 768);
+
+  useEffect(() => {
+    const handleResize = () => {
+      setIsMobile(window.innerWidth < 768);
+      if (window.innerWidth >= 768) {
+        setActive(null);
+      }
+    };
+
+    window.addEventListener('resize', handleResize);
+    return () => window.removeEventListener('resize', handleResize);
+  }, []);
 
   return (
     <div className="custom-navbar">
@@ -24,7 +37,7 @@ const BootstrapNavbar = () => {
           {/* Main Navigation */}
           <Menu setActive={setActive}>
             {/* THE RESORT */}
-            <MenuItem setActive={setActive} active={active} item="THE RESORT">
+            <MenuItem setActive={setActive} active={active} item="THE RESORT" isMobile={isMobile}>
               <div className="mega-menu-content">
                 <div className="mega-menu-columns">
                   <div className="mega-menu-left">
@@ -54,7 +67,7 @@ const BootstrapNavbar = () => {
             </MenuItem>
 
             {/* HOTELS */}
-            <MenuItem setActive={setActive} active={active} item="HOTELS">
+            <MenuItem setActive={setActive} active={active} item="HOTELS" isMobile={isMobile}>
               <div className="mega-menu-content">
                 <div className="mega-menu-columns">
                   <div className="mega-menu-left">
@@ -81,7 +94,7 @@ const BootstrapNavbar = () => {
             </MenuItem>
 
             {/* FAMILIES */}
-            <MenuItem setActive={setActive} active={active} item="FAMILIES">
+            <MenuItem setActive={setActive} active={active} item="FAMILIES" isMobile={isMobile}>
               <div className="mega-menu-content">
                 <div className="mega-menu-columns">
                   <div className="mega-menu-left">
@@ -107,7 +120,7 @@ const BootstrapNavbar = () => {
             </MenuItem>
 
             {/* GASTRONOMY */}
-            <MenuItem setActive={setActive} active={active} item="GASTRONOMY">
+            <MenuItem setActive={setActive} active={active} item="GASTRONOMY" isMobile={isMobile}>
               <div className="mega-menu-content">
                 <div className="mega-menu-columns">
                   <div className="mega-menu-left">
@@ -137,7 +150,7 @@ const BootstrapNavbar = () => {
             </MenuItem>
 
             {/* EXPERIENCES */}
-            <MenuItem setActive={setActive} active={active} item="EXPERIENCES">
+            <MenuItem setActive={setActive} active={active} item="EXPERIENCES" isMobile={isMobile}>
               <div className="mega-menu-content">
                 <div className="mega-menu-columns">
                   <div className="mega-menu-left">
@@ -164,7 +177,7 @@ const BootstrapNavbar = () => {
             </MenuItem>
 
             {/* OFFERS */}
-            <MenuItem setActive={setActive} active={active} item="OFFERS">
+            <MenuItem setActive={setActive} active={active} item="OFFERS" isMobile={isMobile}>
               <div className="mega-menu-content">
                 <div className="mega-menu-columns">
                   <div className="mega-menu-left">
@@ -191,7 +204,7 @@ const BootstrapNavbar = () => {
             </MenuItem>
 
             {/* THE MARINA */}
-            <MenuItem setActive={setActive} active={active} item="THE MARINA">
+            <MenuItem setActive={setActive} active={active} item="THE MARINA" isMobile={isMobile}>
               <div className="mega-menu-content">
                 <div className="mega-menu-columns">
                   <div className="mega-menu-left">
@@ -221,7 +234,7 @@ const BootstrapNavbar = () => {
             </MenuItem>
 
             {/* GALLERY */}
-            <MenuItem setActive={setActive} active={active} item="GALLERY">
+            <MenuItem setActive={setActive} active={active} item="GALLERY" isMobile={isMobile}>
               <div className="mega-menu-content">
                 <div className="mega-menu-columns">
                   <div className="mega-menu-left">
