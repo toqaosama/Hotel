@@ -31,6 +31,7 @@
   min-height: 80px;
   flex-wrap: wrap;
   gap: 5px;
+  position: relative;
 }
 
 .navbar-brand {
@@ -312,7 +313,10 @@
   height: 30px;
   gap: 5px;
   z-index: 1061;
-  position: relative;
+  position: absolute;
+  right: 40px;
+  top: 50%;
+  transform: translateY(-50%);
 }
 
 .hamburger-menu span {
@@ -353,6 +357,24 @@
   overflow-y: auto;
   animation: slideInRight 0.3s ease;
   padding-top: 80px;
+}
+
+
+.mobile-sidebar-footer {
+  padding: 15px;
+  border-top: 1px solid #e5e5e5;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #f8f9fa;
+  position: sticky;
+  bottom: 0;
+}
+
+.mobile-sidebar-footer .book-now-btn {
+  width: 100%;
+  height: 45px;
+  margin: 0;
 }
 
 @keyframes slideInRight {
@@ -596,11 +618,7 @@
   }
 
   .book-now-btn {
-    height: 45px;
-    padding: 0 12px;
-    font-size: 11px;
-    min-width: 100px;
-    width: auto;
+    display: none;
   }
 }
 
