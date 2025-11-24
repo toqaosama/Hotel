@@ -11,7 +11,12 @@ import Home from "./pages/Home";
 function App() {
 
   useEffect(() => {
-    AOS.init({ duration: 800 });
+    AOS.init({ 
+      duration: 800,
+      once: true,
+      mirror: false,
+      offset: 100
+    });
   }, []);
 
   return (

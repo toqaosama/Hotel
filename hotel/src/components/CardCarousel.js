@@ -1,4 +1,5 @@
 import React, { useRef, useState } from "react";
+import AOS from "aos";
 import "./css/CardCarousel.css";
 
 const cardsData = [
@@ -66,6 +67,10 @@ export default function CardCarousel({ title }) {
 
   const letters = "NEWS".split("");
 
+  React.useEffect(() => {
+    AOS.refresh();
+  }, []);
+
   /* ------------------ CURSOR MOVEMENT ------------------ */
   const handleMouseMove = (e) => {
     const circle = document.getElementById("cursorCircle");
@@ -105,7 +110,7 @@ export default function CardCarousel({ title }) {
   return (
     <section className="carousel-section">
       {/* -------- HEADER -------- */}
-      <div className="carousel-header-wrapper">
+      <div className="carousel-header-wrapper" data-aos="fade-up">
 
         {/* LEFT BLOCK */}
         <div className="header-left">
@@ -116,6 +121,8 @@ export default function CardCarousel({ title }) {
               <span
                 key={i}
                 className="letter"
+                data-aos="fade-up"
+                data-aos-delay={`${i * 120}`}
                 style={{ animationDelay: `${i * 0.12}s` }}
               >
                 {letter}
@@ -140,6 +147,8 @@ export default function CardCarousel({ title }) {
       {/* -------- CAROUSEL -------- */}
       <div
         className="carousel-wrapper"
+        data-aos="fade-up"
+        data-aos-delay="200"
         onMouseMove={handleMouseMove}
         onMouseLeave={handleMouseLeave}
         onClick={handleClick}

@@ -6,8 +6,12 @@
 .text-reveal {
   display: inline-block;
   transform: translateY(100%);
-  animation: textReveal 1.4s ease-out forwards;
   opacity: 0;
+}
+
+/* AOS will handle the animation */
+.text-reveal-container[data-aos="fade-up"].aos-animate .text-reveal {
+  animation: textReveal 1.4s ease-out forwards;
 }
 
 @keyframes textReveal {

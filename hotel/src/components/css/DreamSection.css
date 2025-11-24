@@ -66,8 +66,11 @@
   margin: 0;
   opacity: 0;
   transform: translateY(40px);
-  animation: textReveal 2.5s ease-out forwards; /* slow reveal */
   color: #323231;
+}
+
+.dream-text-area[data-aos="fade-up"].aos-animate .dream-text {
+  animation: textReveal 2.5s ease-out forwards;
 }
 
 /* ============ ANIMATION ============ */

@@ -1,19 +1,24 @@
 import React from "react";
+import AOS from "aos";
 import "./css/AboutSection.css";
 
 export default function AboutSection() {
+  React.useEffect(() => {
+    AOS.refresh();
+  }, []);
+
   return (
     <section className="about-section">
       <div className="about-inner">
-        <div className="about-content">
+        <div className="about-content" data-aos="fade-up">
           <div className="about-subtitle">GASTRONOMY</div>
 
           <div className="about-title-wrapper">
             <h1 className="about-title">
-              <span>F</span><span>O</span><span>R</span><span>F</span><span>O</span><span>O</span><span>D</span>
+              <span data-aos="fade-up" data-aos-delay="0">F</span><span data-aos="fade-up" data-aos-delay="100">O</span><span data-aos="fade-up" data-aos-delay="200">R</span><span data-aos="fade-up" data-aos-delay="300">F</span><span data-aos="fade-up" data-aos-delay="400">O</span><span data-aos="fade-up" data-aos-delay="500">O</span><span data-aos="fade-up" data-aos-delay="600">D</span>
             </h1>
             <h1 className="about-title">
-              <span>P</span><span>L</span><span>A</span><span>T</span><span>E</span>
+              <span data-aos="fade-up" data-aos-delay="0">P</span><span data-aos="fade-up" data-aos-delay="100">L</span><span data-aos="fade-up" data-aos-delay="200">A</span><span data-aos="fade-up" data-aos-delay="300">T</span><span data-aos="fade-up" data-aos-delay="400">E</span>
             </h1>
           </div>
 

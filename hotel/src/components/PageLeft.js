@@ -1,9 +1,14 @@
 import React from "react";
+import AOS from "aos";
 import "./css/PageLeft.css";
 
 export default function PageLeft() {
+  React.useEffect(() => {
+    AOS.refresh();
+  }, []);
+
   return (
-    <section className="expL-section">
+    <section className="expL-section" data-aos="fade-up">
       <div className="expL-bg-anim" aria-hidden="true"></div>
 
       <div className="expL-inner">

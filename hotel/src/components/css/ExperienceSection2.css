@@ -13,6 +13,9 @@
   width: 0%;
   background: linear-gradient(to right, #e9e5d6, #f5f3ee);
   z-index: 0;
+}
+
+.exp3-section[data-aos="fade-up"].aos-animate .exp3-bg-anim {
   animation: exp3-bgLoad 1s ease-out forwards;
 }
 

@@ -1,8 +1,13 @@
 import React from "react";
+import AOS from "aos";
 import "./css/DreamSection.css";
 import sea from "../assets/images/sea.jpg";
 
 export default function DreamSection() {
+  React.useEffect(() => {
+    AOS.refresh();
+  }, []);
+
   return (
     <div className="dream-wrapper">
       <div className="dream-container">
@@ -10,7 +15,7 @@ export default function DreamSection() {
        
 
         {/* TEXT */}
-        <div className="dream-text-area">
+        <div className="dream-text-area" data-aos="fade-up">
 
           {/* QUOTE MARKS */}
           <div className="quote-icon top-quote">“</div>
@@ -32,7 +37,7 @@ export default function DreamSection() {
         </div>
 
  {/* IMAGE */}
-        <div className="dream-image-wrapper">
+        <div className="dream-image-wrapper" data-aos="fade-up" data-aos-delay="200">
           <img
             src={sea}  // <-- replace with your image
             alt="Aerial beach"

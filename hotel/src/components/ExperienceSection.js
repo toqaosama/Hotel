@@ -1,9 +1,14 @@
 import React from "react";
+import AOS from "aos";
 import "./css/ExperienceSection.css";
 
 export default function ExperienceSection() {
+  React.useEffect(() => {
+    AOS.refresh();
+  }, []);
+
   return (
-    <section className="exp2-section">
+    <section className="exp2-section" data-aos="fade-up">
       {/* highlight animated background layer */}
       <div className="exp2-bg-anim" aria-hidden="true"></div>
 

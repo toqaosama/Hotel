@@ -1,11 +1,16 @@
 import React from "react";
+import AOS from "aos";
 import "./css/ExperienceSection2.css";
 
 export default function ExperienceSection() {
+  React.useEffect(() => {
+    AOS.refresh();
+  }, []);
+
   return (
     <>
       {/* MAIN EXPERIENCE SECTION */}
-      <section className="exp3-section">
+      <section className="exp3-section" data-aos="fade-up">
         <div className="exp3-bg-anim" aria-hidden="true"></div>
 
         <div className="exp3-inner">
@@ -44,12 +49,12 @@ export default function ExperienceSection() {
 
           {/* Text column */}
           <div className="exp3-text">
-            <p className="exp3-sub exp3-animate" style={{ animationDelay: '0.2s' }}>EXPERIENCES</p>
+            <p className="exp3-sub exp3-animate" data-aos="fade-up" data-aos-delay="200" style={{ animationDelay: '0.2s' }}>EXPERIENCES</p>
             <div className="exp3-head-wrapper">
-              <h3 className="exp3-head line exp3-animate" style={{ animationDelay: '0.4s' }}>A SANCTUARY</h3>
-              <h3 className="exp3-head line exp3-animate" style={{ animationDelay: '0.6s' }}>OF ADVENTURE</h3>
+              <h3 className="exp3-head line exp3-animate" data-aos="fade-up" data-aos-delay="400" style={{ animationDelay: '0.4s' }}>A SANCTUARY</h3>
+              <h3 className="exp3-head line exp3-animate" data-aos="fade-up" data-aos-delay="600" style={{ animationDelay: '0.6s' }}>OF ADVENTURE</h3>
             </div>
-            <div className="exp3-paragraphs exp3-animate" style={{ animationDelay: '0.8s' }}>
+            <div className="exp3-paragraphs exp3-animate" data-aos="fade-up" data-aos-delay="800" style={{ animationDelay: '0.8s' }}>
               <p>
                 Discover a resort where possibilities are endless. Whether it's scuba diving, beekeeping, bird watching, waterskiing – inspiration is found at every turn. Hone your game at world class facilities; including the Rafa Nadal Tennis Center, Bear Grylls Survival Academy, Chelsea Football FC Academy or Sani Treetop Adventure. Or if you want space, explore Sani Resort's 1,000 acres of unspoilt wilderness by bike.
               </p>
@@ -65,24 +70,24 @@ export default function ExperienceSection() {
       </section>
 
       {/* AWARD / WINNER SECTION */}
-      <section className="award-section">
+      <section className="award-section" data-aos="fade-up">
         <div className="award-inner">
-          <div className="award-image award-animate" style={{ animationDelay: '0.2s' }}>
+          <div className="award-image award-animate" data-aos="fade-up" data-aos-delay="200" style={{ animationDelay: '0.2s' }}>
             <img
               src="https://sani-prd-cdn.azureedge.net/media/y20b1k41/worlds-leading-family-beach-resort-2024-winner-shield-black-256.png?v=1dbca31e9a75ef0"
               alt="World's Leading Family & Beach Resort - WINNER 2024"
             />
           </div>
           <div className="award-text">
-            <p className="award-subtitle award-animate" style={{ animationDelay: '0.4s' }}>WINNER 2024</p>
-            <p className="award-title award-animate" style={{ animationDelay: '0.6s' }}>
+            <p className="award-subtitle award-animate" data-aos="fade-up" data-aos-delay="400" style={{ animationDelay: '0.4s' }}>WINNER 2024</p>
+            <p className="award-title award-animate" data-aos="fade-up" data-aos-delay="600" style={{ animationDelay: '0.6s' }}>
               World's Leading Family & Beach Resort
             </p>
-            <p className="award-description award-animate" style={{ animationDelay: '0.8s' }}>
+            <p className="award-description award-animate" data-aos="fade-up" data-aos-delay="800" style={{ animationDelay: '0.8s' }}>
               Named the World's Leading Family & Beach Resort for the sixth consecutive year, Sani celebrates success at the prestigious World Travel Awards.
             </p>
           </div>
-          <div className="award-link award-animate" style={{ animationDelay: '1s' }}>
+          <div className="award-link award-animate" data-aos="fade-up" data-aos-delay="1000" style={{ animationDelay: '1s' }}>
             <a href="/news/world-travel-awards-2024">
               Discover More
               <span className="award-link-underline"></span>

@@ -1,6 +1,7 @@
 import React from "react";
 import { Container, Row, Col, Carousel } from "react-bootstrap";
 import { motion } from "framer-motion";
+import AOS from "aos";
 import "./css/DiscoverSection.css";
 
 // Dummy images for left and right carousels
@@ -21,6 +22,10 @@ const fadeUp = {
 };
 
 const ResortSection = () => {
+  React.useEffect(() => {
+    AOS.refresh();
+  }, []);
+
   return (
     <section className="resort-section-wrapper" aria-labelledby="resort-heading">
       <Container className="resort-container">
@@ -53,6 +58,7 @@ const ResortSection = () => {
           <Col xl={4} lg={4} md={4} xs={12} className="text-content-column">
             <motion.div
               className="text-content-wrapper"
+              data-aos="fade-up"
               initial="hidden"
               whileInView="visible"
               viewport={{ once: true, margin: "-50px" }}

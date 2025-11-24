@@ -82,6 +82,10 @@
   transition: opacity 0.7s ease, transform 0.7s ease;
 }
 
+.letter[data-aos="fade-up"].aos-animate {
+  animation: fadeUp 0.7s ease forwards;
+}
+
 .animated-title.animate-in .letter {
   animation: fadeUp 0.7s ease forwards;
 }
